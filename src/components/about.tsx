@@ -4,10 +4,10 @@ import React, { useEffect, useRef } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { HandHeart, GraduationCap, Brain, Target } from 'lucide-react'
 
-const About = () => {
+const About = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useEffect((): (() => void) | void => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -94,21 +94,21 @@ const About = () => {
                 </h3>
                 <ul className="text-foreground/80 space-y-2">
                   <li className="flex items-start">
-                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                     <span>
                       Ética e confidencialidade em todos os atendimentos
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                     <span>Respeito à diversidade e individualidade</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                     <span>Acolhimento e empatia em cada consulta</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
                     <span>Compromisso com a excelência profissional</span>
                   </li>
                 </ul>

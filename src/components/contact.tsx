@@ -16,7 +16,7 @@ import {
   MessageCircle,
 } from 'lucide-react'
 
-const Contact = () => {
+const Contact = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
   const [formData, setFormData] = useState({
     name: '',
@@ -27,7 +27,7 @@ const Contact = () => {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  useEffect(() => {
+  useEffect((): (() => void) | void => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,7 +49,7 @@ const Contact = () => {
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
-  ) => {
+  ): void => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -57,10 +57,9 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault()
     // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData)
     setIsSubmitted(true)
 
     // Reset form after 3 seconds (for demo purposes)

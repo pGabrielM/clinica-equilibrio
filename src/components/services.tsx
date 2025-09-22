@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { User, Baby, Heart, Users, Calendar, ArrowRight } from 'lucide-react'
 
-const Services = () => {
+const Services = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useEffect((): (() => void) | void => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,7 +26,7 @@ const Services = () => {
     return () => observer.disconnect()
   }, [])
 
-  const scrollToContact = () => {
+  const scrollToContact = (): void => {
     const element = document.getElementById('contact')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })

@@ -5,11 +5,11 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react'
 
-const Testimonials = () => {
+const Testimonials = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,20 +65,21 @@ const Testimonials = () => {
     },
   ]
 
-  const nextTestimonial = () => {
+  const nextTestimonial = (): void => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
   }
 
-  const prevTestimonial = () => {
+  const prevTestimonial = (): void => {
     setCurrentTestimonial(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     )
   }
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 5000) // Auto-advance every 5 seconds
+    }, 5000)
+
     return () => clearInterval(timer)
   }, [testimonials.length])
 

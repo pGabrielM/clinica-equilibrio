@@ -5,10 +5,10 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { GraduationCap, Award, Clock, Mail } from 'lucide-react'
 
-const Team = () => {
+const Team = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useEffect((): (() => void) | void => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

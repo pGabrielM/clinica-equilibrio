@@ -8,7 +8,7 @@ import Testimonials from '@/components/testimonials'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
     <main>
       <Header />

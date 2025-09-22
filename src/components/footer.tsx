@@ -13,8 +13,8 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
+const Footer = (): React.ReactElement => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -164,7 +164,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-background/20 border-t"></div>
+        <div className="border-background/20 border-t" />
 
         {/* Bottom Footer */}
         <div className="flex flex-col items-center justify-between py-6 md:flex-row">

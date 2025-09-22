@@ -4,8 +4,8 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Heart, Shield, Users } from 'lucide-react'
 
-const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
+const Hero = (): React.ReactElement => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -19,10 +19,10 @@ const Hero = () => {
     >
       {/* Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="bg-primary/10 animate-float absolute left-10 top-20 h-32 w-32 rounded-full"></div>
-        <div className="bg-secondary/15 animate-float-delayed absolute right-20 top-40 h-24 w-24 rounded-full"></div>
-        <div className="bg-primary/5 animate-float absolute bottom-32 left-1/4 h-40 w-40 rounded-full"></div>
-        <div className="bg-secondary/10 animate-float-delayed absolute bottom-20 right-10 h-28 w-28 rounded-full"></div>
+        <div className="bg-primary/10 animate-float absolute left-10 top-20 h-32 w-32 rounded-full" />
+        <div className="bg-secondary/15 animate-float-delayed absolute right-20 top-40 h-24 w-24 rounded-full" />
+        <div className="bg-primary/5 animate-float absolute bottom-32 left-1/4 h-40 w-40 rounded-full" />
+        <div className="bg-secondary/10 animate-float-delayed absolute bottom-20 right-10 h-28 w-28 rounded-full" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform">
         <div className="animate-bounce">
           <div className="flex h-10 w-6 justify-center rounded-full border-2 border-primary">
-            <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-primary"></div>
+            <div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-primary" />
           </div>
         </div>
       </div>

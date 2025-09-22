@@ -4,12 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const Header = () => {
+const Header = (): React.ReactElement => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
+  useEffect((): (() => void) | void => {
+    const handleScroll = (): void => {
       setIsScrolled(window.scrollY > 50)
     }
 
@@ -17,7 +17,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })

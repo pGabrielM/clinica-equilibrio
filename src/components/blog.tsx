@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react'
 
-const Blog = () => {
+const Blog = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
+  useEffect((): (() => void) | void => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
