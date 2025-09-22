@@ -1,7 +1,0 @@
-.next
-out
-node_modules
-*.log
-.env*
-!.env.example
-public
