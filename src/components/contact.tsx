@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Send, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
   CheckCircle,
   Calendar,
-  MessageCircle
+  MessageCircle,
 } from 'lucide-react'
 
 const Contact = () => {
@@ -23,7 +23,7 @@ const Contact = () => {
     email: '',
     phone: '',
     service: '',
-    message: ''
+    message: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -45,11 +45,15 @@ const Contact = () => {
     return () => observer.disconnect()
   }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
   }
 
@@ -58,7 +62,7 @@ const Contact = () => {
     // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData)
     setIsSubmitted(true)
-    
+
     // Reset form after 3 seconds (for demo purposes)
     setTimeout(() => {
       setIsSubmitted(false)
@@ -67,7 +71,7 @@ const Contact = () => {
         email: '',
         phone: '',
         service: '',
-        message: ''
+        message: '',
       })
     }, 3000)
   }
@@ -76,7 +80,11 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Endereço',
-      content: ['Rua das Flores, 123', 'Centro - São Paulo, SP', 'CEP: 01234-567'],
+      content: [
+        'Rua das Flores, 123',
+        'Centro - São Paulo, SP',
+        'CEP: 01234-567',
+      ],
     },
     {
       icon: Phone,
@@ -86,12 +94,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'E-mail',
-      content: ['contato@clinicaequilibrio.com.br', 'agendamento@clinicaequilibrio.com.br'],
+      content: [
+        'contato@clinicaequilibrio.com.br',
+        'agendamento@clinicaequilibrio.com.br',
+      ],
     },
     {
       icon: Clock,
       title: 'Horário de Funcionamento',
-      content: ['Segunda a Sexta: 8h às 20h', 'Sábados: 8h às 16h', 'Domingos: Fechado'],
+      content: [
+        'Segunda a Sexta: 8h às 20h',
+        'Sábados: 8h às 16h',
+        'Domingos: Fechado',
+      ],
     },
   ]
 
@@ -101,36 +116,32 @@ const Contact = () => {
     'Terapia de Casal',
     'Grupos de Apoio',
     'Orientação Profissional',
-    'Avaliação Psicológica'
+    'Avaliação Psicológica',
   ]
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       ref={sectionRef}
       className="section-padding bg-muted/30"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 
-            className="animate-on-scroll font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
-          >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="animate-on-scroll mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Agende sua <span className="text-primary">Consulta</span>
           </h2>
-          <p 
-            className="animate-on-scroll text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animation-delay-200"
-          >
-            Estamos prontos para ouvir você. Entre em contato conosco e dê o primeiro passo 
-            em direção ao seu bem-estar emocional e mental.
+          <p className="animate-on-scroll text-foreground/80 animation-delay-200 mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
+            Estamos prontos para ouvir você. Entre em contato conosco e dê o
+            primeiro passo em direção ao seu bem-estar emocional e mental.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Contact Form */}
           <Card className="animate-on-scroll border-primary/10 animation-delay-400">
             <CardHeader>
               <CardTitle className="flex items-center text-xl font-semibold text-foreground">
-                <Calendar className="w-5 h-5 mr-2 text-primary" />
+                <Calendar className="mr-2 h-5 w-5 text-primary" />
                 Solicitar Agendamento
               </CardTitle>
             </CardHeader>
@@ -138,7 +149,10 @@ const Contact = () => {
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="name"
+                      className="mb-1 block text-sm font-medium text-foreground"
+                    >
                       Nome Completo *
                     </label>
                     <Input
@@ -154,7 +168,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="email"
+                      className="mb-1 block text-sm font-medium text-foreground"
+                    >
                       E-mail *
                     </label>
                     <Input
@@ -170,7 +187,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="mb-1 block text-sm font-medium text-foreground"
+                    >
                       Telefone *
                     </label>
                     <Input
@@ -186,7 +206,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="service"
+                      className="mb-1 block text-sm font-medium text-foreground"
+                    >
                       Serviço de Interesse
                     </label>
                     <select
@@ -194,7 +217,7 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full h-10 px-3 py-2 border border-primary/20 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                      className="border-primary/20 h-10 w-full rounded-md border bg-background px-3 py-2 text-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       <option value="">Selecione um serviço</option>
                       {services.map((service) => (
@@ -206,7 +229,10 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="message"
+                      className="mb-1 block text-sm font-medium text-foreground"
+                    >
                       Mensagem
                     </label>
                     <Textarea
@@ -215,26 +241,27 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Conte-nos um pouco sobre o que você gostaria de trabalhar ou esclarecer dúvidas..."
-                      className="border-primary/20 focus:border-primary min-h-[100px]"
+                      className="border-primary/20 min-h-[100px] focus:border-primary"
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                  <Button
+                    type="submit"
+                    className="hover:bg-primary/90 w-full bg-primary text-white"
                   >
-                    <Send className="w-4 h-4 mr-2" />
+                    <Send className="mr-2 h-4 w-4" />
                     Enviar Solicitação
                   </Button>
                 </form>
               ) : (
-                <div className="text-center py-8">
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                <div className="py-8 text-center">
+                  <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-500" />
+                  <h3 className="mb-2 text-xl font-semibold text-foreground">
                     Solicitação Enviada!
                   </h3>
                   <p className="text-foreground/70">
-                    Recebemos sua mensagem e entraremos em contato em breve para agendar sua consulta.
+                    Recebemos sua mensagem e entraremos em contato em breve para
+                    agendar sua consulta.
                   </p>
                 </div>
               )}
@@ -244,18 +271,18 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card 
+              <Card
                 key={index}
-                className="animate-on-scroll border-primary/10 hover:shadow-lg transition-shadow"
+                className="animate-on-scroll border-primary/10 transition-shadow hover:shadow-lg"
                 style={{ animationDelay: `${600 + index * 100}ms` }}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-primary" />
+                    <div className="bg-primary/10 mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg">
+                      <info.icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-2">
+                      <h3 className="mb-2 font-semibold text-foreground">
                         {info.title}
                       </h3>
                       <div className="space-y-1">
@@ -275,15 +302,16 @@ const Contact = () => {
             <Card className="animate-on-scroll border-destructive/20 bg-destructive/5 animation-delay-1000">
               <CardContent className="p-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-destructive/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 text-destructive" />
+                  <div className="bg-destructive/10 mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg">
+                    <MessageCircle className="h-6 w-6 text-destructive" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">
+                    <h3 className="mb-2 font-semibold text-foreground">
                       Situações de Emergência
                     </h3>
-                    <p className="text-foreground/70 text-sm mb-2">
-                      Se você está passando por uma crise ou pensamentos suicidas, procure ajuda imediatamente:
+                    <p className="text-foreground/70 mb-2 text-sm">
+                      Se você está passando por uma crise ou pensamentos
+                      suicidas, procure ajuda imediatamente:
                     </p>
                     <p className="text-sm font-medium text-destructive">
                       CVV: 188 • SAMU: 192 • Polícia: 190
@@ -299,11 +327,15 @@ const Contact = () => {
         <div className="mt-16">
           <Card className="animate-on-scroll border-primary/10 animation-delay-1200">
             <CardContent className="p-0">
-              <div className="h-64 bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
+              <div className="from-primary/10 to-secondary/20 flex h-64 items-center justify-center bg-gradient-to-br">
                 <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary/40 mx-auto mb-4" />
-                  <p className="text-foreground/60">Mapa da localização da clínica</p>
-                  <p className="text-sm text-foreground/40">(Integração com Google Maps)</p>
+                  <MapPin className="text-primary/40 mx-auto mb-4 h-16 w-16" />
+                  <p className="text-foreground/60">
+                    Mapa da localização da clínica
+                  </p>
+                  <p className="text-foreground/40 text-sm">
+                    (Integração com Google Maps)
+                  </p>
                 </div>
               </div>
             </CardContent>

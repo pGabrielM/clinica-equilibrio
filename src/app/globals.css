@@ -1,10 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
-  --background: #F9FAFB;
+  --background: #f9fafb;
   --foreground: #333333;
-  --primary: #4E8D7C;
-  --secondary: #A7C4BC;
+  --primary: #4e8d7c;
+  --secondary: #a7c4bc;
   --muted: #f1f5f9;
   --border: #e2e8f0;
   --card: #ffffff;
@@ -15,15 +17,15 @@
   --accent-foreground: #333333;
   --destructive: #ef4444;
   --destructive-foreground: #fef2f2;
-  --ring: #4E8D7C;
+  --ring: #4e8d7c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f172a;
     --foreground: #f1f5f9;
-    --primary: #5EAEA0;
-    --secondary: #8FB7B0;
+    --primary: #5eaea0;
+    --secondary: #8fb7b0;
     --muted: #1e293b;
     --border: #334155;
     --card: #1e293b;
@@ -34,7 +36,7 @@
     --accent-foreground: #f1f5f9;
     --destructive: #fca5a5;
     --destructive-foreground: #1e293b;
-    --ring: #5EAEA0;
+    --ring: #5eaea0;
   }
 }
 
@@ -79,6 +81,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -86,9 +89,11 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -99,6 +104,7 @@ body {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);

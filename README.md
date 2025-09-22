@@ -43,6 +43,7 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o 
 ## 🎨 Design
 
 O projeto utiliza uma paleta de cores focada em transmitir tranquilidade e confiança:
+
 - Primária: #4E8D7C (verde suave)
 - Secundária: #A7C4BC (verde claro acinzentado)
 - Fundo: #F9FAFB (quase branco)

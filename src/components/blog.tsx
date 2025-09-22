@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useRef } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -29,7 +29,8 @@ const Blog = () => {
   const blogPosts = [
     {
       title: '5 Sinais de Ansiedade que Você Não Deve Ignorar',
-      excerpt: 'A ansiedade é um transtorno cada vez mais comum. Conheça os principais sinais e quando buscar ajuda profissional.',
+      excerpt:
+        'A ansiedade é um transtorno cada vez mais comum. Conheça os principais sinais e quando buscar ajuda profissional.',
       date: '15 de Janeiro, 2024',
       readTime: '5 min de leitura',
       category: 'Ansiedade',
@@ -37,7 +38,8 @@ const Blog = () => {
     },
     {
       title: 'A Importância da Terapia de Casal para Relacionamentos Saudáveis',
-      excerpt: 'Descubra como a terapia de casal pode fortalecer vínculos e melhorar a comunicação entre parceiros.',
+      excerpt:
+        'Descubra como a terapia de casal pode fortalecer vínculos e melhorar a comunicação entre parceiros.',
       date: '10 de Janeiro, 2024',
       readTime: '7 min de leitura',
       category: 'Relacionamentos',
@@ -45,7 +47,8 @@ const Blog = () => {
     },
     {
       title: 'Como Ajudar seu Filho a Lidar com as Emoções',
-      excerpt: 'Dicas práticas para pais auxiliarem no desenvolvimento emocional saudável das crianças.',
+      excerpt:
+        'Dicas práticas para pais auxiliarem no desenvolvimento emocional saudável das crianças.',
       date: '5 de Janeiro, 2024',
       readTime: '6 min de leitura',
       category: 'Psicologia Infantil',
@@ -53,7 +56,8 @@ const Blog = () => {
     },
     {
       title: 'Mindfulness: Técnicas Simples para o Dia a Dia',
-      excerpt: 'Aprenda exercícios de mindfulness que podem ser praticados facilmente no cotidiano para reduzir o estresse.',
+      excerpt:
+        'Aprenda exercícios de mindfulness que podem ser praticados facilmente no cotidiano para reduzir o estresse.',
       date: '1 de Janeiro, 2024',
       readTime: '4 min de leitura',
       category: 'Bem-estar',
@@ -61,7 +65,8 @@ const Blog = () => {
     },
     {
       title: 'Quando Buscar Ajuda Psicológica: Um Guia Completo',
-      excerpt: 'Entenda os momentos e sinais que indicam a necessidade de acompanhamento psicológico profissional.',
+      excerpt:
+        'Entenda os momentos e sinais que indicam a necessidade de acompanhamento psicológico profissional.',
       date: '28 de Dezembro, 2023',
       readTime: '8 min de leitura',
       category: 'Autoconhecimento',
@@ -69,7 +74,8 @@ const Blog = () => {
     },
     {
       title: 'Estratégias para Gerenciar o Estresse no Trabalho',
-      excerpt: 'Técnicas eficazes para manter o equilíbrio mental e emocional mesmo em ambientes de trabalho desafiadores.',
+      excerpt:
+        'Técnicas eficazes para manter o equilíbrio mental e emocional mesmo em ambientes de trabalho desafiadores.',
       date: '25 de Dezembro, 2023',
       readTime: '6 min de leitura',
       category: 'Estresse',
@@ -78,70 +84,62 @@ const Blog = () => {
   ]
 
   return (
-    <section 
-      id="blog" 
-      ref={sectionRef}
-      className="section-padding bg-muted/30"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 
-            className="animate-on-scroll font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
-          >
+    <section id="blog" ref={sectionRef} className="section-padding bg-muted/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="animate-on-scroll mb-6 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
             Conteúdo e <span className="text-primary">Orientação</span>
           </h2>
-          <p 
-            className="animate-on-scroll text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animation-delay-200"
-          >
-            Artigos e dicas sobre saúde mental, bem-estar emocional e crescimento pessoal, 
-            escritos por nossa equipe de especialistas.
+          <p className="animate-on-scroll text-foreground/80 animation-delay-200 mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
+            Artigos e dicas sobre saúde mental, bem-estar emocional e
+            crescimento pessoal, escritos por nossa equipe de especialistas.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <Card 
-              key={index} 
-              className="animate-on-scroll hover:shadow-xl transition-all duration-300 hover:scale-105 group border-primary/10 overflow-hidden"
+            <Card
+              key={index}
+              className="animate-on-scroll border-primary/10 group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl"
               style={{ animationDelay: `${400 + index * 100}ms` }}
             >
               {/* Image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
-                <BookOpen className="w-16 h-16 text-primary/40" />
+              <div className="from-primary/10 to-secondary/20 flex h-48 items-center justify-center bg-gradient-to-br">
+                <BookOpen className="text-primary/40 h-16 w-16" />
               </div>
-              
+
               <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="bg-primary/10 rounded-full px-2 py-1 text-xs text-primary">
                     {post.category}
                   </span>
-                  <div className="flex items-center text-xs text-foreground/60">
-                    <Calendar className="w-3 h-3 mr-1" />
+                  <div className="text-foreground/60 flex items-center text-xs">
+                    <Calendar className="mr-1 h-3 w-3" />
                     {post.date}
                   </div>
                 </div>
-                <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
+                <CardTitle className="text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-primary">
                   {post.title}
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent>
-                <p className="text-foreground/70 text-sm mb-4 leading-relaxed">
+                <p className="text-foreground/70 mb-4 text-sm leading-relaxed">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center text-xs text-foreground/60">
-                    <Clock className="w-3 h-3 mr-1" />
+                  <div className="text-foreground/60 flex items-center text-xs">
+                    <Clock className="mr-1 h-3 w-3" />
                     {post.readTime}
                   </div>
-                  <Button 
-                    variant="ghost" 
+                  <Button
+                    variant="ghost"
                     size="sm"
-                    className="text-primary hover:text-primary/80 hover:bg-primary/10 p-0 h-auto"
+                    className="hover:text-primary/80 hover:bg-primary/10 h-auto p-0 text-primary"
                   >
                     Leia Mais
-                    <ArrowRight className="w-3 h-3 ml-1" />
+                    <ArrowRight className="ml-1 h-3 w-3" />
                   </Button>
                 </div>
               </CardContent>
@@ -150,13 +148,13 @@ const Blog = () => {
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-4"
+            className="border-primary px-8 py-4 text-primary hover:bg-primary hover:text-white"
           >
             Ver Todos os Artigos
-            <ArrowRight className="w-4 h-4 ml-2" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

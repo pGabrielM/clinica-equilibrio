@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
 import React from 'react'
-import { 
-  Instagram, 
-  Linkedin, 
-  MessageCircle, 
-  Mail, 
-  Phone, 
+import {
+  Instagram,
+  Linkedin,
+  MessageCircle,
+  Mail,
+  Phone,
   MapPin,
   Heart,
-  ExternalLink
+  ExternalLink,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -36,45 +36,45 @@ const Footer = () => {
     'Terapia de Casal',
     'Grupos de Apoio',
     'Orientação Profissional',
-    'Avaliação Psicológica'
+    'Avaliação Psicológica',
   ]
 
   const legalLinks = [
     'Política de Privacidade',
     'Termos de Uso',
     'Código de Ética',
-    'LGPD'
+    'LGPD',
   ]
 
   return (
     <footer className="bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and Description */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h3 className="font-serif text-2xl font-semibold text-background mb-2">
+              <h3 className="mb-2 font-serif text-2xl font-semibold text-background">
                 Clínica Equilíbrio
               </h3>
               <p className="text-background/80 text-sm leading-relaxed">
-                Cuidando da sua saúde mental com equilíbrio e empatia. 
+                Cuidando da sua saúde mental com equilíbrio e empatia.
                 Oferecemos atendimento psicológico humanizado e especializado.
               </p>
             </div>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
-              <div className="flex items-center text-sm text-background/80">
-                <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
+              <div className="text-background/80 flex items-center text-sm">
+                <MapPin className="mr-2 h-4 w-4 flex-shrink-0" />
                 <span>Rua das Flores, 123 - Centro, SP</span>
               </div>
-              <div className="flex items-center text-sm text-background/80">
-                <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
+              <div className="text-background/80 flex items-center text-sm">
+                <Phone className="mr-2 h-4 w-4 flex-shrink-0" />
                 <span>(11) 9999-8888</span>
               </div>
-              <div className="flex items-center text-sm text-background/80">
-                <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
+              <div className="text-background/80 flex items-center text-sm">
+                <Mail className="mr-2 h-4 w-4 flex-shrink-0" />
                 <span>contato@clinicaequilibrio.com.br</span>
               </div>
             </div>
@@ -82,13 +82,15 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-background mb-4">Links Rápidos</h4>
+            <h4 className="mb-4 font-semibold text-background">
+              Links Rápidos
+            </h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-background/80 hover:text-background transition-colors text-sm"
+                    className="text-background/80 text-sm transition-colors hover:text-background"
                   >
                     {link.name}
                   </button>
@@ -99,13 +101,15 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-background mb-4">Nossos Serviços</h4>
+            <h4 className="mb-4 font-semibold text-background">
+              Nossos Serviços
+            </h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
                   <button
                     onClick={() => scrollToSection('services')}
-                    className="text-background/80 hover:text-background transition-colors text-sm text-left"
+                    className="text-background/80 text-left text-sm transition-colors hover:text-background"
                   >
                     {service}
                   </button>
@@ -116,40 +120,43 @@ const Footer = () => {
 
           {/* Newsletter and Social */}
           <div>
-            <h4 className="font-semibold text-background mb-4">Conecte-se Conosco</h4>
-            <p className="text-background/80 text-sm mb-4">
-              Siga-nos nas redes sociais para dicas sobre saúde mental e bem-estar.
+            <h4 className="mb-4 font-semibold text-background">
+              Conecte-se Conosco
+            </h4>
+            <p className="text-background/80 mb-4 text-sm">
+              Siga-nos nas redes sociais para dicas sobre saúde mental e
+              bem-estar.
             </p>
-            
+
             {/* Social Links */}
-            <div className="flex space-x-3 mb-6">
+            <div className="mb-6 flex space-x-3">
               <Button
                 variant="outline"
                 size="sm"
                 className="border-background/30 text-background hover:bg-background hover:text-foreground"
               >
-                <Instagram className="w-4 h-4" />
+                <Instagram className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 className="border-background/30 text-background hover:bg-background hover:text-foreground"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 className="border-background/30 text-background hover:bg-background hover:text-foreground"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="h-4 w-4" />
               </Button>
             </div>
 
             {/* CTA */}
-            <Button 
+            <Button
               onClick={() => scrollToSection('contact')}
-              className="w-full bg-primary hover:bg-primary/90 text-white"
+              className="hover:bg-primary/90 w-full bg-primary text-white"
             >
               Agendar Consulta
             </Button>
@@ -157,11 +164,11 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-background/20"></div>
+        <div className="border-background/20 border-t"></div>
 
         {/* Bottom Footer */}
-        <div className="py-6 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+        <div className="flex flex-col items-center justify-between py-6 md:flex-row">
+          <div className="flex flex-col items-center space-y-2 md:flex-row md:space-x-6 md:space-y-0">
             <p className="text-background/80 text-sm">
               © 2025 Clínica Equilíbrio - Projeto Fictício para Portfólio
             </p>
@@ -169,44 +176,45 @@ const Footer = () => {
               {legalLinks.map((link) => (
                 <button
                   key={link}
-                  className="text-background/60 hover:text-background/80 transition-colors text-xs"
+                  className="text-background/60 hover:text-background/80 text-xs transition-colors"
                 >
                   {link}
                 </button>
               ))}
             </div>
           </div>
-          
+
           {/* Professional Registration */}
-          <div className="flex items-center text-xs text-background/60 mt-4 md:mt-0">
+          <div className="text-background/60 mt-4 flex items-center text-xs md:mt-0">
             <span>Feito com</span>
-            <Heart className="w-3 h-3 mx-1 text-red-400 fill-current" />
+            <Heart className="mx-1 h-3 w-3 fill-current text-red-400" />
             <span>para demonstração</span>
           </div>
         </div>
 
         {/* Emergency Notice */}
-        <div className="border-t border-background/20 py-4">
-          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <div className="border-background/20 border-t py-4">
+          <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
             <div className="flex items-start">
-              <MessageCircle className="w-5 h-5 text-red-400 mr-3 flex-shrink-0 mt-0.5" />
+              <MessageCircle className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-red-400" />
               <div>
-                <p className="text-background text-sm font-medium mb-1">
+                <p className="mb-1 text-sm font-medium text-background">
                   Emergências Psicológicas
                 </p>
                 <p className="text-background/80 text-xs leading-relaxed">
-                  Se você está passando por uma crise ou tendo pensamentos suicidas, 
-                  procure ajuda imediatamente. CVV: 188 (24h) • CAPS • UPA • SAMU: 192
+                  Se você está passando por uma crise ou tendo pensamentos
+                  suicidas, procure ajuda imediatamente. CVV: 188 (24h) • CAPS •
+                  UPA • SAMU: 192
                 </p>
-                <div className="flex items-center mt-2">
-                  <a 
-                    href="https://www.cvv.org.br" 
-                    target="_blank" 
+                <div className="mt-2 flex items-center">
+                  <a
+                    href="https://www.cvv.org.br"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="text-red-400 hover:text-red-300 text-xs underline flex items-center"
+                    className="flex items-center text-xs text-red-400 underline hover:text-red-300"
                   >
                     CVV - Centro de Valorização da Vida
-                    <ExternalLink className="w-3 h-3 ml-1" />
+                    <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
               </div>

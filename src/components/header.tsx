@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -35,32 +35,30 @@ const Header = () => {
   ]
 
   return (
-    <header 
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md' 
-          : 'bg-transparent'
+    <header
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 shadow-md backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <button 
+            <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-serif font-semibold text-primary hover:text-primary/80 transition-colors"
+              className="hover:text-primary/80 font-serif text-2xl font-semibold text-primary transition-colors"
             >
               Clínica Equilíbrio
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden items-center space-x-8 md:flex">
             {navigation.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="font-medium text-foreground transition-colors hover:text-primary"
               >
                 {item.name}
               </button>
@@ -69,9 +67,9 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button 
+            <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90"
+              className="hover:bg-primary/90 bg-primary"
             >
               Agendar Consulta
             </Button>
@@ -95,20 +93,20 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+            <div className="space-y-1 rounded-lg bg-white/95 px-2 pb-3 pt-2 shadow-lg backdrop-blur-md">
               {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                  className="block w-full rounded-md px-3 py-2 text-left text-foreground transition-colors hover:bg-accent hover:text-primary"
                 >
                   {item.name}
                 </button>
               ))}
               <div className="px-3 py-2">
-                <Button 
+                <Button
                   onClick={() => scrollToSection('contact')}
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="hover:bg-primary/90 w-full bg-primary"
                 >
                   Agendar Consulta
                 </Button>
