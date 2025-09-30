@@ -1,20 +1,20 @@
 export const posts = [
   {
     id: 1,
-    title: 'Como lidar com ansiedade no dia a dia',
-    excerpt: 'Dicas práticas para gerenciar sintomas de ansiedade e promover bem-estar emocional em situações cotidianas.',
-    image: '/images/blog-1.jpg',
+    title: 'Importância da Prevenção em Saúde',
+    excerpt: 'Descubra como exames preventivos podem salvar vidas e manter sua saúde em dia.',
+    image: 'https://picsum.photos/400/250?random=health1',
   },
   {
     id: 2,
-    title: 'A importância da terapia de casal',
-    excerpt: 'Entenda como a terapia pode fortalecer relacionamentos e ajudar casais a enfrentarem desafios juntos.',
-    image: '/images/blog-2.jpg',
+    title: 'Alimentação Saudável para Famílias',
+    excerpt: 'Dicas práticas para uma dieta equilibrada e nutritiva para toda a família.',
+    image: 'https://picsum.photos/400/250?random=health2',
   },
   {
     id: 3,
-    title: 'Equilíbrio emocional: chave para uma vida saudável',
-    excerpt: 'Explore estratégias para manter o equilíbrio emocional e viver uma vida mais plena e satisfatória.',
-    image: '/images/blog-3.jpg',
+    title: 'Tecnologia em Diagnósticos Médicos',
+    excerpt: 'Como inovações tecnológicas estão revolucionando o cuidado à saúde.',
+    image: 'https://picsum.photos/400/250?random=health3',
   },
 ];

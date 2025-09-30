@@ -1,9 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/cn';
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> { }
-
-const Card = React.forwardRef<HTMLDivElement, CardProps>(
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
@@ -17,7 +15,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = 'Card';
 
-const CardHeader = React.forwardRef<HTMLDivElement, CardProps>(
+const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
@@ -53,14 +51,14 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
 );
 CardDescription.displayName = 'CardDescription';
 
-const CardContent = React.forwardRef<HTMLDivElement, CardProps>(
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
   )
 );
 CardContent.displayName = 'CardContent';
 
-const CardFooter = React.forwardRef<HTMLDivElement, CardProps>(
+const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}

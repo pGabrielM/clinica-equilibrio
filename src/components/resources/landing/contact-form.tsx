@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { ContactData } from '@/lib/types';
-import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
+import type { IContactData } from '@/types/landing.d.ts';
+import { Button } from '@/components/commons';
+import { Input } from '@/components/commons';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons';
 
 export function ContactForm() {
-  const [formData, setFormData] = useState<ContactData>({
+  const [formData, setFormData] = useState<IContactData>({
     name: '',
     email: '',
     message: '',
@@ -33,8 +33,8 @@ export function ContactForm() {
     return (
       <div className="text-center py-12">
         <div className="text-green-600 text-6xl mb-4">✓</div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">Mensagem enviada!</h3>
-        <p className="text-gray-600">
+        <h3 className="text-2xl font-bold text-foreground mb-2">Mensagem enviada!</h3>
+        <p className="text-muted-foreground">
           Obrigado pelo contato. Responderemos em breve.
         </p>
       </div>
@@ -52,7 +52,7 @@ export function ContactForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
               Nome
             </label>
             <Input
@@ -66,7 +66,7 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
               Email
             </label>
             <Input
@@ -80,7 +80,7 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-2">
               Mensagem
             </label>
             <textarea
@@ -89,7 +89,7 @@ export function ContactForm() {
               rows={4}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               required
               aria-required="true"
             />

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/nav";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/resources/landing/navbar";
+import { Footer } from "@/components/resources/landing/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clínica Equilíbrio - Saúde Mental e Bem-Estar",
-  description: "Clínica de psicologia especializada em terapia individual, de casal e familiar. Encontre seu equilíbrio emocional com profissionais qualificados.",
+  title: "Clínica Equilíbrio - Saúde e Bem-Estar Médico",
+  description: "Clínica médica especializada em consultas gerais, cardiologia, pediatria e muito mais. Cuide da sua saúde com profissionais qualificados e atendimento humanizado.",
 };
 
 export default function RootLayout({

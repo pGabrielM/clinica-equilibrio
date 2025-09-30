@@ -1,9 +1,10 @@
-import { Hero } from '@/components/hero';
-import { Services } from '@/components/services';
-import { Team } from '@/components/team';
-import { BlogPreview } from '@/components/blog';
-import { BookingForm } from '@/components/booking';
-import { ContactForm, ContactDetails } from '@/components/contact';
+import { Hero } from '@/components/resources/landing/hero';
+import { Services } from '@/components/resources/landing/services';
+import { Team } from '@/components/resources/landing/team';
+import { BlogPreview } from '@/components/resources/landing/blog-preview';
+import { BookingForm } from '@/components/resources/landing/booking-form';
+import { ContactForm } from '@/components/resources/landing/contact-form';
+import { ContactDetails } from '@/components/resources/landing/contact-details';
 
 export default function Home() {
   return (
@@ -13,13 +14,13 @@ export default function Home() {
       <Team />
       <BlogPreview />
       <BookingForm />
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Entre em contato
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Estamos aqui para ajudar. Entre em contato conosco para dúvidas ou agendamentos.
             </p>
           </div>

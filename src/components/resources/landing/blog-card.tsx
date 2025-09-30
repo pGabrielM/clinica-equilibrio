@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { Post } from '@/lib/types';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
+import type { IBlogPost } from '@/types/landing.d.ts';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons';
+import { Button } from '@/components/commons';
 
 interface BlogCardProps {
-  post: Post;
+  post: IBlogPost;
 }
 
 export function BlogCard({ post }: BlogCardProps) {

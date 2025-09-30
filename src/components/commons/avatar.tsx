@@ -1,9 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/cn';
 
-interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> { }
-
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+const Avatar = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
@@ -17,18 +16,21 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 );
 Avatar.displayName = 'Avatar';
 
-const AvatarImage = React.forwardRef<HTMLImageElement, React.ImgHTMLAttributes<HTMLImageElement>>(
-  ({ className, ...props }, ref) => (
-    <img
+const AvatarImage = React.forwardRef<HTMLImageElement, { src: string; alt?: string; className?: string }>(
+  ({ className, src, alt }, ref) => (
+    <Image
       ref={ref}
+      src={src}
+      alt={alt || ''}
+      width={40}
+      height={40}
       className={cn('aspect-square h-full w-full', className)}
-      {...props}
     />
   )
 );
 AvatarImage.displayName = 'AvatarImage';
 
-const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarProps>(
+const AvatarFallback = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}

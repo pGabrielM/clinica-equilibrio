@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { TeamMember } from '@/lib/types';
-import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+import { ITeamMember } from '@/types/landing';
+import { Card, CardContent, CardDescription, CardHeader } from '@/components/commons';
+import { Badge } from '@/components/commons';
 
 interface TeamCardProps {
-  member: TeamMember;
+  member: ITeamMember;
 }
 
 export function TeamCard({ member }: TeamCardProps) {
@@ -20,7 +20,7 @@ export function TeamCard({ member }: TeamCardProps) {
             className="rounded-full object-cover"
           />
         </div>
-        <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+        <h3 className="text-xl font-semibold text-foreground">{member.name}</h3>
         <Badge variant="secondary" className="mt-2">
           {member.specialty}
         </Badge>

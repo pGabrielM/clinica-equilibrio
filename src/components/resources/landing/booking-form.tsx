@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { services } from '@/data/services';
-import { BookingData } from '@/lib/types';
-import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
+import { services } from '@/utils/landing-helper';
+import type { IBookingData } from '@/types/landing.d.ts';
+import { Button } from '@/components/commons';
+import { Input } from '@/components/commons';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons';
 
 export function BookingForm() {
-  const [formData, setFormData] = useState<BookingData>({
+  const [formData, setFormData] = useState<IBookingData>({
     name: '',
     phone: '',
     service: '',
@@ -35,14 +35,14 @@ export function BookingForm() {
 
   if (isSubmitted) {
     return (
-      <section id="booking" className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card>
+      <section id="booking" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <Card className="max-w-2xl mx-auto">
             <CardContent className="text-center py-12">
               <div className="text-green-600 text-6xl mb-4">✓</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Agendamento enviado!</h3>
-              <p className="text-gray-600">
-                Entraremos em contato em breve para confirmar sua sessão.
+              <h3 className="text-2xl font-bold text-foreground mb-2">Agendamento enviado!</h3>
+              <p className="text-muted-foreground">
+                Entraremos em contato em breve para confirmar sua consulta.
               </p>
             </CardContent>
           </Card>
@@ -52,17 +52,17 @@ export function BookingForm() {
   }
 
   return (
-    <section id="booking" className="py-20 bg-gray-50">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="booking" className="py-20 bg-muted">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Agende sua sessão
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Agende sua consulta
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Preencha o formulário abaixo e entraremos em contato para confirmar seu horário.
           </p>
         </div>
-        <Card>
+        <Card className="max-w-2xl mx-auto">
           <CardHeader>
             <CardTitle>Formulário de Agendamento</CardTitle>
             <CardDescription>
@@ -72,7 +72,7 @@ export function BookingForm() {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Nome completo
                 </label>
                 <Input
@@ -86,7 +86,7 @@ export function BookingForm() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
                   Telefone
                 </label>
                 <Input
@@ -100,7 +100,7 @@ export function BookingForm() {
                 />
               </div>
               <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
                   Serviço desejado
                 </label>
                 <select
@@ -108,7 +108,7 @@ export function BookingForm() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   required
                   aria-required="true"
                 >
@@ -122,7 +122,7 @@ export function BookingForm() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="date" className="block text-sm font-medium text-foreground mb-2">
                     Data preferida
                   </label>
                   <Input
@@ -136,7 +136,7 @@ export function BookingForm() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="time" className="block text-sm font-medium text-foreground mb-2">
                     Horário preferido
                   </label>
                   <Input
