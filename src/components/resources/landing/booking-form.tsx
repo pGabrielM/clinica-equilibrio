@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { services } from '@/utils/landing-helper';
 import type { IBookingData } from '@/types/landing.d.ts';
 import { Button } from '@/components/commons';
 import { Input } from '@/components/commons';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons';
+import anime from '@/lib/anime';
 
 export function BookingForm() {
   const [formData, setFormData] = useState<IBookingData>({
@@ -16,6 +17,51 @@ export function BookingForm() {
     time: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            anime.timeline({
+              easing: 'easeOutExpo',
+            })
+              .add({
+                targets: titleRef.current,
+                opacity: [0, 1],
+                translateY: [-30, 0],
+                duration: 800,
+              })
+              .add({
+                targets: descRef.current,
+                opacity: [0, 1],
+                translateY: [-20, 0],
+                duration: 600,
+              }, '-=400')
+              .add({
+                targets: cardRef.current,
+                opacity: [0, 1],
+                scale: [0.95, 1],
+                duration: 800,
+              }, '-=200');
+
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const section = document.getElementById('booking');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +88,7 @@ export function BookingForm() {
               <div className="text-green-600 text-6xl mb-4">✓</div>
               <h3 className="text-2xl font-bold text-foreground mb-2">Agendamento enviado!</h3>
               <p className="text-muted-foreground">
-                Entraremos em contato em breve para confirmar sua consulta.
+                Entraremos em contato em breve para confirmar sua sessão.
               </p>
             </CardContent>
           </Card>
@@ -55,14 +101,14 @@ export function BookingForm() {
     <section id="booking" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Agende sua consulta
+          <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0">
+            Agende sua sessão
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p ref={descRef} className="text-xl text-muted-foreground opacity-0">
             Preencha o formulário abaixo e entraremos em contato para confirmar seu horário.
           </p>
         </div>
-        <Card className="max-w-2xl mx-auto">
+        <Card ref={cardRef} className="max-w-2xl mx-auto opacity-0">
           <CardHeader>
             <CardTitle>Formulário de Agendamento</CardTitle>
             <CardDescription>
@@ -150,7 +196,7 @@ export function BookingForm() {
                   />
                 </div>
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full hover:scale-105 transition-transform">
                 Enviar agendamento
               </Button>
             </form>

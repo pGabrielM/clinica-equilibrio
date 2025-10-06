@@ -9,7 +9,7 @@ interface TeamCardProps {
 
 export function TeamCard({ member }: TeamCardProps) {
   return (
-    <Card className="text-center hover:shadow-lg transition-shadow">
+    <Card className="text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
       <CardHeader>
         <div className="flex justify-center mb-4">
           <Image

@@ -9,13 +9,13 @@ interface BlogCardProps {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="aspect-video relative">
+    <Card className="overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <div className="aspect-video relative overflow-hidden">
         <Image
           src={post.image}
           alt={`Imagem do artigo: ${post.title}`}
           fill
-          className="object-cover"
+          className="object-cover hover:scale-110 transition-transform duration-300"
         />
       </div>
       <CardHeader>
@@ -25,7 +25,7 @@ export function BlogCard({ post }: BlogCardProps) {
         <CardDescription className="text-base mb-4">
           {post.excerpt}
         </CardDescription>
-        <Button variant="outline">
+        <Button variant="outline" className="hover:bg-primary hover:text-white transition-colors">
           Leia mais
         </Button>
       </CardContent>
