@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Button } from '@/shared/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { MobileMenu } from './mobile-menu';
-import anime from '@/shared/lib/anime';
+import anime from '@/lib/anime';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,8 +67,8 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg border-b'
-          : 'bg-background shadow-sm border-b'
+        ? 'bg-background/95 backdrop-blur-md shadow-lg border-b'
+        : 'bg-background shadow-sm border-b'
         }`}
     >
       <div className="container mx-auto px-4">

@@ -1,6 +1,6 @@
-import { IService } from '@/features/landing/types/landing';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
-import { Button } from '@/shared/components/ui/button';
+import { IService } from '@/types/landing';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { User, Heart, Baby, Users } from 'lucide-react';
 
 interface ServiceCardProps {

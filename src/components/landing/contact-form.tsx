@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import type { IContactData } from '@/features/landing/types/landing';
-import { Button } from '@/shared/components/ui/button';
-import { Input } from '@/shared/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
+import type { IContactData } from '@/types/landing';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function ContactForm() {
   const [formData, setFormData] = useState<IContactData>({

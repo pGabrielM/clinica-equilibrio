@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import type { IBlogPost } from '@/features/landing/types/landing';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
-import { Button } from '@/shared/components/ui/button';
+import type { IBlogPost } from '@/types/landing';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 interface BlogCardProps {
   post: IBlogPost;

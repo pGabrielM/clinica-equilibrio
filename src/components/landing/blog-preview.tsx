@@ -1,11 +1,11 @@
 'use client';
 
-import { services } from '@/features/landing/utils/landing-helper';
-import { ServiceCard } from './service-card';
+import { posts } from '@/helpers/landing-helper';
+import { BlogCard } from './blog-card';
 import { useEffect, useRef } from 'react';
-import anime from '@/shared/lib/anime';
+import anime from '@/lib/anime';
 
-export function Services() {
+export function BlogPreview() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export function Services() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const tl = anime.timeline();
-            
+
             if (titleRef.current) {
               tl.add(titleRef.current, {
                 opacity: [0, 1],
@@ -25,7 +25,7 @@ export function Services() {
                 easing: 'out-expo',
               });
             }
-            
+
             if (descRef.current) {
               tl.add(descRef.current, {
                 opacity: [0, 1],
@@ -34,11 +34,11 @@ export function Services() {
                 easing: 'out-expo',
               }, '-=400');
             }
-            
+
             if (cardsRef.current?.children) {
               tl.add(cardsRef.current.children, {
                 opacity: [0, 1],
-                translateY: [50, 0],
+                translateX: [-50, 0],
                 delay: anime.stagger(150),
                 duration: 800,
                 easing: 'out-expo',
@@ -52,7 +52,7 @@ export function Services() {
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById('services');
+    const section = document.getElementById('blog');
     if (section) {
       observer.observe(section);
     }
@@ -61,19 +61,19 @@ export function Services() {
   }, []);
 
   return (
-    <section id="services" className="py-20 bg-muted">
+    <section id="blog" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0">
-            Nossos Serviços
+            Blog
           </h2>
           <p ref={descRef} className="text-xl text-muted-foreground max-w-2xl mx-auto opacity-0">
-            Oferecemos uma variedade de serviços psicológicos especializados para cuidar da sua saúde mental e bem-estar.
+            Artigos sobre saúde mental, bem-estar emocional e dicas psicológicas para uma vida equilibrada.
           </p>
         </div>
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <BlogCard key={post.id} post={post} />
           ))}
         </div>
       </div>

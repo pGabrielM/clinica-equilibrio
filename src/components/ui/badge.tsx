@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/shared/lib/cn';
+import { cn } from '@/lib/cn';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'secondary' | 'destructive' | 'outline';

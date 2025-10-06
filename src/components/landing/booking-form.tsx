@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { services } from '@/features/landing/utils/landing-helper';
-import type { IBookingData } from '@/features/landing/types/landing';
-import { Button } from '@/shared/components/ui/button';
-import { Input } from '@/shared/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
-import anime from '@/shared/lib/anime';
+import { services } from '@/helpers/landing-helper';
+import type { IBookingData } from '@/types/landing';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import anime from '@/lib/anime';
 
 export function BookingForm() {
   const [formData, setFormData] = useState<IBookingData>({
@@ -253,8 +253,8 @@ export function BookingForm() {
                   onChange={handleChange}
                   onBlur={() => handleBlur('service')}
                   className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-all ${touched.service && errors.service
-                      ? 'border-red-500 focus:ring-red-500'
-                      : 'border-border focus:ring-primary'
+                    ? 'border-red-500 focus:ring-red-500'
+                    : 'border-border focus:ring-primary'
                     }`}
                 >
                   <option value="">Selecione um serviço</option>
@@ -317,8 +317,8 @@ export function BookingForm() {
                     onChange={handleChange}
                     onBlur={() => handleBlur('time')}
                     className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-all ${touched.time && errors.time
-                        ? 'border-red-500 focus:ring-red-500'
-                        : 'border-border focus:ring-primary'
+                      ? 'border-red-500 focus:ring-red-500'
+                      : 'border-border focus:ring-primary'
                       }`}
                   >
                     <option value="">Selecione um horário</option>

@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import anime from "@/shared/lib/anime";
+import anime from "@/lib/anime";
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);

@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { services } from '@/features/landing/utils/landing-helper';
-import type { IBookingData } from '@/features/landing/types/landing';
-import { Button } from '@/shared/components/ui/button';
-import { Input } from '@/shared/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
-import anime from '@/shared/lib/anime';
+import { services } from '@/helpers/landing-helper';
+import type { IBookingData } from '@/types/landing';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import anime from '@/lib/anime';
 
 export function BookingForm() {
   const [formData, setFormData] = useState<IBookingData>({
@@ -27,7 +27,7 @@ export function BookingForm() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const tl = anime.timeline();
-            
+
             if (titleRef.current) {
               tl.add(titleRef.current, {
                 opacity: [0, 1],
@@ -36,7 +36,7 @@ export function BookingForm() {
                 easing: 'out-expo',
               });
             }
-            
+
             if (descRef.current) {
               tl.add(descRef.current, {
                 opacity: [0, 1],
@@ -45,7 +45,7 @@ export function BookingForm() {
                 easing: 'out-expo',
               }, '-=400');
             }
-            
+
             if (cardRef.current) {
               tl.add(cardRef.current, {
                 opacity: [0, 1],

@@ -1,9 +1,9 @@
 'use client';
 
-import { team } from '@/features/landing/utils/landing-helper';
+import { team } from '@/helpers/landing-helper';
 import { TeamCard } from './team-card';
 import { useEffect, useRef } from 'react';
-import anime from '@/shared/lib/anime';
+import anime from '@/lib/anime';
 
 export function Team() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -16,7 +16,7 @@ export function Team() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const tl = anime.timeline();
-            
+
             if (titleRef.current) {
               tl.add(titleRef.current, {
                 opacity: [0, 1],
@@ -25,7 +25,7 @@ export function Team() {
                 easing: 'out-expo',
               });
             }
-            
+
             if (descRef.current) {
               tl.add(descRef.current, {
                 opacity: [0, 1],
@@ -34,7 +34,7 @@ export function Team() {
                 easing: 'out-expo',
               }, '-=400');
             }
-            
+
             if (cardsRef.current?.children) {
               tl.add(cardsRef.current.children, {
                 opacity: [0, 1],

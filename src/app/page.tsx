@@ -1,14 +1,14 @@
 'use client';
 
-import { Hero } from '@/features/landing/components/hero';
-import { Services } from '@/features/landing/components/services';
-import { Team } from '@/features/landing/components/team';
-import { BlogPreview } from '@/features/landing/components/blog-preview';
-import { BookingForm } from '@/features/landing/components/booking-form';
-import { ContactForm } from '@/features/landing/components/contact-form';
-import { ContactDetails } from '@/features/landing/components/contact-details';
+import { Hero } from '@/components/landing/hero';
+import { Services } from '@/components/landing/services';
+import { Team } from '@/components/landing/team';
+import { BlogPreview } from '@/components/landing/blog-preview';
+import { BookingForm } from '@/components/landing/booking-form';
+import { ContactForm } from '@/components/landing/contact-form';
+import { ContactDetails } from '@/components/landing/contact-details';
 import { useEffect, useRef } from 'react';
-import anime from '@/shared/lib/anime';
+import anime from '@/lib/anime';
 
 export default function Home() {
   const contactTitleRef = useRef<HTMLHeadingElement>(null);
