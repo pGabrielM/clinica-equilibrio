@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { services } from '@/utils/landing-helper';
-import type { IBookingData } from '@/types/landing.d.ts';
-import { Button } from '@/components/commons';
-import { Input } from '@/components/commons';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons';
-import anime from '@/lib/anime';
+import { services } from '@/features/landing/utils/landing-helper';
+import type { IBookingData } from '@/features/landing/types/landing';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shared/components/ui/card';
+import anime from '@/shared/lib/anime';
 
 export function BookingForm() {
   const [formData, setFormData] = useState<IBookingData>({
@@ -26,27 +26,34 @@ export function BookingForm() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            anime.timeline({
-              easing: 'easeOutExpo',
-            })
-              .add({
-                targets: titleRef.current,
+            const tl = anime.timeline();
+            
+            if (titleRef.current) {
+              tl.add(titleRef.current, {
                 opacity: [0, 1],
                 translateY: [-30, 0],
                 duration: 800,
-              })
-              .add({
-                targets: descRef.current,
+                easing: 'out-expo',
+              });
+            }
+            
+            if (descRef.current) {
+              tl.add(descRef.current, {
                 opacity: [0, 1],
                 translateY: [-20, 0],
                 duration: 600,
-              }, '-=400')
-              .add({
-                targets: cardRef.current,
+                easing: 'out-expo',
+              }, '-=400');
+            }
+            
+            if (cardRef.current) {
+              tl.add(cardRef.current, {
                 opacity: [0, 1],
                 scale: [0.95, 1],
                 duration: 800,
+                easing: 'out-expo',
               }, '-=200');
+            }
 
             observer.disconnect();
           }

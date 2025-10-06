@@ -1,11 +1,11 @@
 'use client';
 
-import { posts } from '@/utils/landing-helper';
-import { BlogCard } from './blog-card';
+import { team } from '@/features/landing/utils/landing-helper';
+import { TeamCard } from './team-card';
 import { useEffect, useRef } from 'react';
-import anime from '@/lib/anime';
+import anime from '@/shared/lib/anime';
 
-export function BlogPreview() {
+export function Team() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -15,28 +15,35 @@ export function BlogPreview() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            anime.timeline({
-              easing: 'easeOutExpo',
-            })
-              .add({
-                targets: titleRef.current,
+            const tl = anime.timeline();
+            
+            if (titleRef.current) {
+              tl.add(titleRef.current, {
                 opacity: [0, 1],
                 translateY: [-30, 0],
                 duration: 800,
-              })
-              .add({
-                targets: descRef.current,
+                easing: 'out-expo',
+              });
+            }
+            
+            if (descRef.current) {
+              tl.add(descRef.current, {
                 opacity: [0, 1],
                 translateY: [-20, 0],
                 duration: 600,
-              }, '-=400')
-              .add({
-                targets: cardsRef.current?.children,
+                easing: 'out-expo',
+              }, '-=400');
+            }
+            
+            if (cardsRef.current?.children) {
+              tl.add(cardsRef.current.children, {
                 opacity: [0, 1],
-                translateX: [-50, 0],
-                delay: anime.stagger(150),
+                scale: [0.9, 1],
+                delay: anime.stagger(200),
                 duration: 800,
+                easing: 'out-expo',
               }, '-=200');
+            }
 
             observer.disconnect();
           }
@@ -45,7 +52,7 @@ export function BlogPreview() {
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById('blog');
+    const section = document.getElementById('team');
     if (section) {
       observer.observe(section);
     }
@@ -54,19 +61,19 @@ export function BlogPreview() {
   }, []);
 
   return (
-    <section id="blog" className="py-20 bg-muted">
+    <section id="team" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0">
-            Blog
+            Nossa Equipe
           </h2>
           <p ref={descRef} className="text-xl text-muted-foreground max-w-2xl mx-auto opacity-0">
-            Artigos sobre saúde mental, bem-estar emocional e dicas psicológicas para uma vida equilibrada.
+            Conheça nossos psicólogos especializados, prontos para oferecer o cuidado que você precisa.
           </p>
         </div>
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} />
+          {team.map((member) => (
+            <TeamCard key={member.id} member={member} />
           ))}
         </div>
       </div>

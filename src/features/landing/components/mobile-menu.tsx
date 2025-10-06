@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components/commons';
+import { Button } from '@/shared/components/ui/button';
 
 export function MobileMenu() {
   return (

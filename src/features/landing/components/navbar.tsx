@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/commons';
+import { Button } from '@/shared/components/ui/button';
 import { MobileMenu } from './mobile-menu';
-import anime from '@/lib/anime';
+import anime from '@/shared/lib/anime';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

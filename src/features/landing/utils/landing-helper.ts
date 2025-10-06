@@ -1,4 +1,4 @@
-import { IService, ITeamMember, IBlogPost } from '@/types/landing';
+import type { IService, ITeamMember, IBlogPost } from '../types/landing';
 
 export const services: IService[] = [
   {

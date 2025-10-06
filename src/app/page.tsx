@@ -1,14 +1,14 @@
 'use client';
 
-import { Hero } from '@/components/resources/landing/hero';
-import { Services } from '@/components/resources/landing/services';
-import { Team } from '@/components/resources/landing/team';
-import { BlogPreview } from '@/components/resources/landing/blog-preview';
-import { BookingForm } from '@/components/resources/landing/booking-form';
-import { ContactForm } from '@/components/resources/landing/contact-form';
-import { ContactDetails } from '@/components/resources/landing/contact-details';
+import { Hero } from '@/features/landing/components/hero';
+import { Services } from '@/features/landing/components/services';
+import { Team } from '@/features/landing/components/team';
+import { BlogPreview } from '@/features/landing/components/blog-preview';
+import { BookingForm } from '@/features/landing/components/booking-form';
+import { ContactForm } from '@/features/landing/components/contact-form';
+import { ContactDetails } from '@/features/landing/components/contact-details';
 import { useEffect, useRef } from 'react';
-import anime from '@/lib/anime';
+import anime from '@/shared/lib/anime';
 
 export default function Home() {
   const contactTitleRef = useRef<HTMLHeadingElement>(null);
@@ -20,28 +20,35 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            anime.timeline({
-              easing: 'easeOutExpo',
-            })
-              .add({
-                targets: contactTitleRef.current,
+            const tl = anime.timeline();
+
+            if (contactTitleRef.current) {
+              tl.add(contactTitleRef.current, {
                 opacity: [0, 1],
                 translateY: [-30, 0],
                 duration: 800,
-              })
-              .add({
-                targets: contactDescRef.current,
+                easing: 'out-expo',
+              });
+            }
+
+            if (contactDescRef.current) {
+              tl.add(contactDescRef.current, {
                 opacity: [0, 1],
                 translateY: [-20, 0],
                 duration: 600,
-              }, '-=400')
-              .add({
-                targets: contactGridRef.current?.children,
+                easing: 'out-expo',
+              }, '-=400');
+            }
+
+            if (contactGridRef.current?.children) {
+              tl.add(contactGridRef.current.children, {
                 opacity: [0, 1],
                 translateX: [-50, 0],
                 delay: anime.stagger(200),
                 duration: 800,
+                easing: 'out-expo',
               }, '-=200');
+            }
 
             observer.disconnect();
           }

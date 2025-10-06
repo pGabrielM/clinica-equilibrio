@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { cn } from '@/lib/cn';
+import { cn } from '@/shared/lib/cn';
 
 const Avatar = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
