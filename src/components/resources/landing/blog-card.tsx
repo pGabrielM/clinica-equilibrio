@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { IBlogPost } from '@/types/landing';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import type { IBlogPost } from '@/types/landings';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons/card';
+import { Button } from '@/components/commons/button';
 import { Calendar, User, Clock } from 'lucide-react';
 
 interface BlogCardProps {

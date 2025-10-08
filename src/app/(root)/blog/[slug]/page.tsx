@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { blogPosts } from '@/helpers/blog-content';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import { blogPosts } from '@/utils/blog-content';
+import { Button } from '@/components/commons/button';
+import { Badge } from '@/components/commons/badge';
+import { Separator } from '@/components/commons/separator';
 import { Calendar, Clock, User, ArrowLeft, Share2 } from 'lucide-react';
 
 interface BlogPostPageProps {

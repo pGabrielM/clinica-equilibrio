@@ -1,12 +1,12 @@
 'use client';
 
-import { Hero } from '@/components/landing/hero';
-import { Services } from '@/components/landing/services';
-import { Team } from '@/components/landing/team';
-import { BlogPreview } from '@/components/landing/blog-preview';
-import { BookingForm } from '@/components/landing/booking-form';
-import { ContactForm } from '@/components/landing/contact-form';
-import { ContactDetails } from '@/components/landing/contact-details';
+import { Hero } from '@/components/resources/landing/hero';
+import { Services } from '@/components/resources/landing/services';
+import { Team } from '@/components/resources/landing/team';
+import { BlogPreview } from '@/components/resources/landing/blog-preview';
+import { BookingForm } from '@/components/resources/landing/booking-form';
+import { ContactForm } from '@/components/resources/landing/contact-form';
+import { ContactDetails } from '@/components/resources/landing/contact-details';
 import { useEffect, useRef } from 'react';
 import anime from '@/lib/anime';
 

@@ -1,10 +1,10 @@
 'use client';
 
-import { team } from '@/helpers/landing-helper';
+import { team } from '@/utils/landing-helper';
 import { TeamCard } from './team-card';
 import { useEffect, useRef, useState } from 'react';
 import anime from '@/lib/anime';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/commons/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Team() {

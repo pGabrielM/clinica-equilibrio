@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons/card';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, ExternalLink } from 'lucide-react';
 
 export function ContactDetails() {

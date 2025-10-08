@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { ITeamMember } from '@/types/landing';
-import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { ITeamMember } from '@/types/landings';
+import { Card, CardContent, CardDescription, CardHeader } from '@/components/commons/card';
+import { Badge } from '@/components/commons/badge';
 
 interface TeamCardProps {
   member: ITeamMember;

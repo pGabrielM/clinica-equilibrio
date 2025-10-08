@@ -1,6 +1,6 @@
 'use client';
 
-import { posts } from '@/helpers/landing-helper';
+import { posts } from '@/utils/landing-helper';
 import { BlogCard } from './blog-card';
 import { useEffect, useRef } from 'react';
 import anime from '@/lib/anime';

@@ -1,10 +1,10 @@
 'use client';
 
-import { services } from '@/helpers/landing-helper';
+import { services } from '@/utils/landing-helper';
 import { ServiceCard } from './service-card';
 import { useEffect, useRef, useState } from 'react';
 import anime from '@/lib/anime';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/commons/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Services() {

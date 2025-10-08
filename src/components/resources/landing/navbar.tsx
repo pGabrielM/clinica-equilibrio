@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/commons/button';
 import { MobileMenu } from './mobile-menu';
 import anime from '@/lib/anime';
 
