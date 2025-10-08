@@ -24,14 +24,16 @@ export interface IBlogPost {
   slug: string;
   content: {
     introduction: string;
-    sections: {
-      title: string;
-      paragraphs: string[];
-    }[];
+    sections: IBlogSection[];
     conclusion: string;
   };
   readTime: number;
   tags: string[];
+}
+
+export interface IBlogSection {
+  title: string;
+  paragraphs: string[];
 }
 
 export interface IBookingData {

@@ -1,7 +1,13 @@
-import { IService } from '@/types/landings';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/commons/card';
-import { Button } from '@/components/commons/button';
-import { User, Heart, Baby, Users } from 'lucide-react';
+import { type IService } from "@/types/landings";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/commons/card";
+import { Button } from "@/components/commons/button";
+import { User, Heart, Baby, Users } from "lucide-react";
 
 interface ServiceCardProps {
   service: IService;
@@ -9,15 +15,15 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service }: ServiceCardProps) {
   const Icon = ({ name }: { name: string }) => {
-    const iconClass = 'w-12 h-12 text-primary';
+    const iconClass = "w-12 h-12 text-primary";
     switch (name) {
-      case 'User':
+      case "User":
         return <User className={iconClass} />;
-      case 'Heart':
+      case "Heart":
         return <Heart className={iconClass} />;
-      case 'Baby':
+      case "Baby":
         return <Baby className={iconClass} />;
-      case 'Users':
+      case "Users":
         return <Users className={iconClass} />;
       default:
         return <User className={iconClass} />;
@@ -25,27 +31,47 @@ export function ServiceCard({ service }: ServiceCardProps) {
   };
 
   return (
-    <Card className="h-full hover:shadow-2xl hover:scale-105 transition-all duration-300 group border-2 hover:border-primary/50 bg-gradient-to-br from-background to-muted/20">
+    <Card className="group hover:border-primary/50 from-background to-muted/20 h-full border-2 bg-gradient-to-br transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <CardHeader>
-        <div className="flex items-start justify-between mb-4">
-          <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+        <div className="mb-4 flex items-start justify-between">
+          <div className="bg-primary/10 group-hover:bg-primary/20 flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110">
             <Icon name={service.icon} />
           </div>
-          <div className="w-8 h-8 bg-primary/5 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <div className="bg-primary/5 flex h-8 w-8 items-center justify-center rounded-full opacity-0 transition-opacity group-hover:opacity-100">
+            <svg
+              className="text-primary h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
           </div>
         </div>
-        <CardTitle className="text-2xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+        <CardTitle className="group-hover:text-primary text-2xl transition-colors">
+          {service.title}
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col flex-grow">
-        <CardDescription className="text-base mb-6 flex-grow leading-relaxed">
+      <CardContent className="flex flex-grow flex-col">
+        <CardDescription className="mb-6 flex-grow text-base leading-relaxed">
           {service.desc}
         </CardDescription>
-        <Button variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all group/btn">
+        <Button
+          variant="outline"
+          className="hover:bg-primary hover:text-primary-foreground hover:border-primary group/btn w-full transition-all"
+        >
           <span>Saiba mais</span>
-          <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Button>

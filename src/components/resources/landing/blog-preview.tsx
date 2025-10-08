@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { posts } from '@/utils/landing-helper';
-import { BlogCard } from './blog-card';
-import { useEffect, useRef } from 'react';
-import anime from '@/lib/anime';
+import { posts } from "@/utils/landing-helper";
+import { BlogCard } from "./blog-card";
+import { useEffect, useRef } from "react";
+import anime from "@/lib/anime";
 
 export function BlogPreview() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -22,27 +22,35 @@ export function BlogPreview() {
                 opacity: [0, 1],
                 translateY: [-30, 0],
                 duration: 800,
-                easing: 'out-expo',
+                easing: "out-expo",
               });
             }
 
             if (descRef.current) {
-              tl.add(descRef.current, {
-                opacity: [0, 1],
-                translateY: [-20, 0],
-                duration: 600,
-                easing: 'out-expo',
-              }, '-=400');
+              tl.add(
+                descRef.current,
+                {
+                  opacity: [0, 1],
+                  translateY: [-20, 0],
+                  duration: 600,
+                  easing: "out-expo",
+                },
+                "-=400"
+              );
             }
 
             if (cardsRef.current?.children) {
-              tl.add(cardsRef.current.children, {
-                opacity: [0, 1],
-                translateX: [-50, 0],
-                delay: anime.stagger(150),
-                duration: 800,
-                easing: 'out-expo',
-              }, '-=200');
+              tl.add(
+                cardsRef.current.children,
+                {
+                  opacity: [0, 1],
+                  translateX: [-50, 0],
+                  delay: anime.stagger(150),
+                  duration: 800,
+                  easing: "out-expo",
+                },
+                "-=200"
+              );
             }
 
             observer.disconnect();
@@ -52,7 +60,7 @@ export function BlogPreview() {
       { threshold: 0.2 }
     );
 
-    const section = document.getElementById('blog');
+    const section = document.getElementById("blog");
     if (section) {
       observer.observe(section);
     }
@@ -61,17 +69,21 @@ export function BlogPreview() {
   }, []);
 
   return (
-    <section id="blog" className="py-20 bg-muted">
+    <section id="blog" className="bg-muted py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-foreground mb-4 opacity-0">
+        <div className="mb-16 text-center">
+          <h2
+            ref={titleRef}
+            className="text-foreground mb-4 text-3xl font-bold opacity-0 md:text-4xl"
+          >
             Blog
           </h2>
-          <p ref={descRef} className="text-xl text-muted-foreground max-w-2xl mx-auto opacity-0">
-            Artigos sobre saúde mental, bem-estar emocional e dicas psicológicas para uma vida equilibrada.
+          <p ref={descRef} className="text-muted-foreground mx-auto max-w-2xl text-xl opacity-0">
+            Artigos sobre saúde mental, bem-estar emocional e dicas psicológicas para uma vida
+            equilibrada.
           </p>
         </div>
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}

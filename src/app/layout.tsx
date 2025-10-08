@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Clínica Equilíbrio - Psicologia e Saúde Mental",
-  description: "Clínica de psicologia especializada em psicoterapia individual, terapia de casal, psicologia infantil e terapia em grupo. Cuide da sua saúde mental com profissionais qualificados e atendimento humanizado.",
+  description:
+    "Clínica de psicologia especializada em psicoterapia individual, terapia de casal, psicologia infantil e terapia em grupo. Cuide da sua saúde mental com profissionais qualificados e atendimento humanizado.",
 };
 
 export default function RootLayout({
@@ -26,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <main className="pt-16">{children}</main>
         <Footer />

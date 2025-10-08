@@ -30,17 +30,20 @@ Uma landing page completa para uma clínica de psicologia, desenvolvida com Next
 ### Passos para rodar
 
 1. Clone o repositório:
+
    ```bash
    git clone <url-do-repositorio>
    cd clinica-equilibrio
    ```
 
 2. Instale as dependências:
+
    ```bash
    npm install
    ```
 
 3. Execute o projeto em modo de desenvolvimento:
+
    ```bash
    npm run dev
    ```
@@ -89,12 +92,14 @@ src/
 ## 🎨 Design e Funcionalidades
 
 ### Navegação
+
 - **Header Fixo**: Permanece visível durante o scroll
 - **Scroll Suave**: Animação suave ao clicar nos links de navegação
 - **Seção Ativa**: Indica visualmente em qual seção o usuário está
 - **Menu Mobile**: Menu responsivo para dispositivos móveis
 
 ### Animações
+
 - **Hero Section**: Fade-in sequencial dos elementos
 - **Services**: Animação ao entrar no viewport
 - **Team**: Scale e fade com stagger effect
@@ -102,6 +107,7 @@ src/
 - **Booking & Contact**: Animações suaves dos formulários
 
 ### Interatividade
+
 - **Hover Effects**: Elevação e escala dos cards
 - **Botões Animados**: Feedback visual nas interações
 - **Formulários Validados**: Validação básica dos campos

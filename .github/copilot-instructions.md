@@ -1,6 +1,7 @@
 # Next.js 15 Landing Page - Copilot Instructions
 
 ## Project Overview
+
 Next.js 15 landing page with TypeScript, TailwindCSS, Shadcn/UI, and Anime.js animations. Mental health clinic landing page with services showcase, team profiles, blog system, and contact/booking forms.
 
 ## Critical Folder Structure (Biotima Standard)
@@ -28,6 +29,7 @@ src/
 ## TypeScript Conventions (CRITICAL)
 
 ### Interface Rules
+
 - **NEVER use `type`, ALWAYS use `interface`**
 - **Prefix all interfaces with `I`**: `IUser`, `IPost`, `IService`
 - **One `.d.ts` file per resource** in `types/` with **PLURAL naming**: `landings.d.ts`
@@ -53,20 +55,22 @@ npm run dev           # Development server
 ## Animation Patterns (Anime.js)
 
 ### Timeline with Stagger
+
 ```typescript
-anime.timeline()
+anime
+  .timeline()
   .add(element, { opacity: [0, 1], duration: 800 })
-  .add(cards, { scale: [0.95, 1], delay: anime.stagger(120) }, '-=400');
+  .add(cards, { scale: [0.95, 1], delay: anime.stagger(120) }, "-=400");
 ```
 
 ## Import Path Examples
 
 ```typescript
-import { Button } from '@/components/commons/button';
-import { Hero } from '@/components/resources/landing/hero';
-import { IService } from '@/types/landings';
-import { services } from '@/utils/landing-helper';
-import anime from '@/lib/anime';
+import { Button } from "@/components/commons/button";
+import { Hero } from "@/components/resources/landing/hero";
+import { IService } from "@/types/landings";
+import { services } from "@/utils/landing-helper";
+import anime from "@/lib/anime";
 ```
 
 ## Key Files
@@ -78,4 +82,4 @@ import anime from '@/lib/anime';
 
 ---
 
-*Follow Biotima standards for consistency across all workspace projects.*
+_Follow Biotima standards for consistency across all workspace projects._
