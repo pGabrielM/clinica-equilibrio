@@ -18,6 +18,20 @@ export interface IBlogPost {
   title: string;
   excerpt: string;
   image: string;
+  date: string;
+  author: string;
+  category: string;
+  slug: string;
+  content: {
+    introduction: string;
+    sections: {
+      title: string;
+      paragraphs: string[];
+    }[];
+    conclusion: string;
+  };
+  readTime: number;
+  tags: string[];
 }
 
 export interface IBookingData {

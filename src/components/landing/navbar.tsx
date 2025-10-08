@@ -129,7 +129,9 @@ export function Navbar() {
               <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform ${activeSection === 'contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`} />
             </Link>
-            <Button className="nav-link">Agende sua sessão</Button>
+            <Link href="#booking" onClick={(e) => handleNavClick(e, '#booking')}>
+              <Button className="nav-link">Agende sua sessão</Button>
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <button

@@ -97,15 +97,19 @@ export function Hero() {
             </div>
 
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
-                <span>Agende sua Sessão</span>
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Button>
-              <Button variant="outline" size="lg" className="hover:scale-105 transition-all border-2 hover:bg-primary/5">
-                Conheça Nossos Serviços
-              </Button>
+              <a href="#booking">
+                <Button size="lg" className="hover:scale-105 transition-all shadow-lg hover:shadow-xl group">
+                  <span>Agende sua Sessão</span>
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Button>
+              </a>
+              <a href="#services">
+                <Button variant="outline" size="lg" className="hover:scale-105 transition-all border-2 hover:bg-primary/5">
+                  Conheça Nossos Serviços
+                </Button>
+              </a>
             </div>
 
             {/* Trust indicators */}
