@@ -199,7 +199,7 @@ export function Hero() {
               <div className="from-primary to-secondary absolute -inset-1 rounded-2xl bg-gradient-to-r opacity-25 blur transition duration-1000 group-hover:opacity-40" />
               <div className="relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&h=400&fit=crop"
+                  src="/images/hero/terapia-sessao.jpg"
                   alt="Atendimento psicológico profissional"
                   width={600}
                   height={400}

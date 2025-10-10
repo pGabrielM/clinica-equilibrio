@@ -7,7 +7,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "ansiedade-como-identificar-e-buscar-ajuda",
     excerpt:
       "Entenda os sinais da ansiedade e saiba quando procurar um profissional de saúde mental para auxiliar no tratamento.",
-    image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/ansiedade-estresse.jpg",
     date: "2025-10-01",
     author: "Dra. Ana Carolina Ribeiro",
     category: "Ansiedade",
@@ -56,7 +56,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "importancia-do-autocuidado-na-saude-mental",
     excerpt:
       "Práticas diárias de autocuidado podem transformar sua relação com o bem-estar emocional e prevenir o esgotamento.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/relacionamentos-saudaveis.jpg",
     date: "2025-09-28",
     author: "Dr. Marcos Almeida",
     category: "Bem-estar",
@@ -105,7 +105,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "depressao-mitos-e-verdades",
     excerpt:
       "Desmistificamos conceitos errados sobre depressão e explicamos como a psicoterapia pode ajudar no tratamento.",
-    image: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/autoestima-autoconfianca.jpg",
     date: "2025-09-20",
     author: "Dr. Rafael Mendes",
     category: "Depressão",
@@ -161,7 +161,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "como-ajudar-criancas-a-lidar-com-emocoes",
     excerpt:
       "Estratégias práticas para pais auxiliarem seus filhos no desenvolvimento da inteligência emocional desde cedo.",
-    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/terapia-cognitiva.jpg",
     date: "2025-09-15",
     author: "Dra. Juliana Costa",
     category: "Psicologia Infantil",
@@ -217,7 +217,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "relacionamentos-saudaveis-o-que-voce-precisa-saber",
     excerpt:
       "Comunicação, limites e empatia são fundamentais para construir e manter relacionamentos equilibrados e duradouros.",
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/saude-mental-trabalho.jpg",
     date: "2025-09-10",
     author: "Dr. Marcos Almeida",
     category: "Relacionamentos",
@@ -273,7 +273,7 @@ export const blogPosts: IBlogPost[] = [
     slug: "burnout-reconheca-os-sinais-e-saiba-como-prevenir",
     excerpt:
       "O esgotamento profissional afeta milhões de pessoas. Aprenda a identificar sintomas e estratégias de prevenção.",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop&q=80",
+    image: "/images/blog/meditacao-mindfulness.jpg",
     date: "2025-09-05",
     author: "Dra. Ana Carolina Ribeiro",
     category: "Trabalho e Saúde Mental",
