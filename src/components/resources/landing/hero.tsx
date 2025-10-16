@@ -4,8 +4,10 @@ import { Button } from "@/components/commons/button";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import anime from "@/lib/anime";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+  const t = useTranslations("hero");
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -64,24 +66,23 @@ export function Hero() {
             <div className="mb-4 inline-block opacity-0" ref={titleRef}>
               <span className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
                 <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />
-                Atendimento Presencial e Online
+                {t("badge")}
               </span>
             </div>
             <h1
               ref={titleRef}
               className="text-foreground mb-6 text-4xl leading-tight font-bold opacity-0 lg:text-6xl"
             >
-              Cuidados com a{" "}
+              {t("title")}
               <span className="text-primary from-primary to-primary/60 bg-gradient-to-r bg-clip-text text-transparent">
-                Saúde Mental
+                {" "}
               </span>
             </h1>
             <p
               ref={descRef}
               className="text-muted-foreground mb-8 text-xl leading-relaxed opacity-0"
             >
-              Na Clínica Equilíbrio, oferecemos atendimento psicológico humanizado e acolhedor para
-              cuidar da sua saúde mental e bem-estar emocional com profissionais especializados.
+              {t("subtitle")}
             </p>
 
             {/* Features badges */}
@@ -102,7 +103,7 @@ export function Hero() {
                     />
                   </svg>
                 </div>
-                <span>Psicólogos CRP Ativos</span>
+                <span>{t("features.activePsychologists")}</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-2 text-sm">
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100">
@@ -120,7 +121,7 @@ export function Hero() {
                     />
                   </svg>
                 </div>
-                <span>Horários Flexíveis</span>
+                <span>{t("features.flexibleSchedules")}</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-2 text-sm">
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-purple-100">
@@ -138,7 +139,7 @@ export function Hero() {
                     />
                   </svg>
                 </div>
-                <span>Ambiente Seguro</span>
+                <span>{t("features.safeEnvironment")}</span>
               </div>
             </div>
 
@@ -148,7 +149,7 @@ export function Hero() {
                   size="lg"
                   className="group shadow-lg transition-all hover:scale-105 hover:shadow-xl"
                 >
-                  <span>Agende sua Sessão</span>
+                  <span>{t("cta")}</span>
                   <svg
                     className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
                     fill="none"
@@ -170,7 +171,7 @@ export function Hero() {
                   size="lg"
                   className="hover:bg-primary/5 border-2 transition-all hover:scale-105"
                 >
-                  Conheça Nossos Serviços
+                  {t("serviceLink")}
                 </Button>
               </a>
             </div>
@@ -179,17 +180,17 @@ export function Hero() {
             <div className="mt-12 flex items-center gap-8 opacity-0" ref={buttonsRef}>
               <div>
                 <div className="text-primary text-3xl font-bold">10+</div>
-                <div className="text-muted-foreground text-sm">Anos de Experiência</div>
+                <div className="text-muted-foreground text-sm">{t("trustBadge")}</div>
               </div>
               <div className="bg-border h-12 w-px" />
               <div>
                 <div className="text-primary text-3xl font-bold">500+</div>
-                <div className="text-muted-foreground text-sm">Pacientes Atendidos</div>
+                <div className="text-muted-foreground text-sm">{t("patientsServed")}</div>
               </div>
               <div className="bg-border h-12 w-px" />
               <div>
                 <div className="text-primary text-3xl font-bold">98%</div>
-                <div className="text-muted-foreground text-sm">Satisfação</div>
+                <div className="text-muted-foreground text-sm">{t("satisfaction")}</div>
               </div>
             </div>
           </div>

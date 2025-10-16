@@ -12,11 +12,22 @@
   "hero": {
     "title": "Equilibrio Mental, Vida Plena",
     "subtitle": "Clínica de psicología y psiquiatría dedicada a tu bienestar emocional",
-    "cta": "Reservar Cita"
+    "cta": "Reservar Cita",
+    "badge": "Atención Presencial y Online",
+    "trustBadge": "Años de Experiencia",
+    "patientsServed": "Pacientes Atendidos",
+    "satisfaction": "Satisfacción",
+    "serviceLink": "Descubre Nuestros Servicios",
+    "features": {
+      "activePsychologists": "Psicólogos CRP Activos",
+      "flexibleSchedules": "Horarios Flexibles",
+      "safeEnvironment": "Ambiente Seguro"
+    }
   },
   "services": {
     "title": "Nuestros Servicios",
-    "subtitle": "Ofrecemos acompañamiento completo para tu salud mental"
+    "subtitle": "Ofrecemos acompañamiento completo para tu salud mental",
+    "learnMore": "Más Información"
   },
   "products": {
     "title": "Productos y Recursos",
@@ -36,6 +47,10 @@
       "email": "Correo Electrónico",
       "hours": "Horario de Atención",
       "onlineService": "Atención Online y Presencial",
+      "onlineInPerson": "Atención Online y Presencial",
+      "viewMap": "Ver en el Mapa",
+      "sendMessage": "Enviar Mensaje",
+      "sendEmail": "Enviar Correo",
       "schedule": {
         "weekdays": "Lunes a Viernes: 7h a 20h",
         "saturday": "Sábado: 8h a 14h"
@@ -90,6 +105,38 @@
     "social": {
       "title": "Redes Sociales",
       "subtitle": "Conéctate con nosotros"
+    }
+  },
+  "booking": {
+    "title": "Agenda Tu Consulta",
+    "subtitle": "Elige la fecha y hora que mejor se adapte a ti",
+    "form": {
+      "name": "Nombre Completo",
+      "phone": "Teléfono",
+      "service": "Selecciona un servicio",
+      "date": "Fecha Preferida",
+      "time": "Hora Preferida",
+      "submit": "Confirmar Reserva",
+      "selecting": "Reservando..."
+    },
+    "validations": {
+      "nameMinLength": "El nombre debe tener al menos 3 caracteres",
+      "phoneFormat": "Formato: (11) 99999-9999",
+      "serviceRequired": "Por favor selecciona un servicio",
+      "dateRequired": "Por favor selecciona una fecha",
+      "timeRequired": "Por favor selecciona una hora"
+    },
+    "nextDays": "Próximos 7 días",
+    "availableTimes": "Horarios disponibles",
+    "schedule": {
+      "morning": "Mañana",
+      "afternoon": "Tarde",
+      "evening": "Noche"
+    },
+    "success": {
+      "title": "¡Reserva Confirmada!",
+      "message": "Tu cita ha sido programada. Nos pondremos en contacto por teléfono o WhatsApp para confirmar.",
+      "confirmation": "Revisa tu correo para los detalles"
     }
   },
   "footer": {

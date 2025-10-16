@@ -8,12 +8,14 @@ import {
 } from "@/components/commons/card";
 import { Button } from "@/components/commons/button";
 import { User, Heart, Baby, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ServiceCardProps {
   service: IService;
 }
 
 export function ServiceCard({ service }: ServiceCardProps) {
+  const t = useTranslations("services");
   const Icon = ({ name }: { name: string }) => {
     const iconClass = "w-12 h-12 text-primary";
     switch (name) {
@@ -65,7 +67,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
           variant="outline"
           className="hover:bg-primary hover:text-primary-foreground hover:border-primary group/btn w-full transition-all"
         >
-          <span>Saiba mais</span>
+          <span>{t("learnMore")}</span>
           <svg
             className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1"
             fill="none"

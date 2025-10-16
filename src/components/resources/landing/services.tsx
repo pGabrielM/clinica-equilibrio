@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import anime from "@/lib/anime";
 import { Button } from "@/components/commons/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Services() {
+  const t = useTranslations("services");
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
@@ -145,11 +147,10 @@ export function Services() {
             ref={titleRef}
             className="text-foreground mb-4 text-3xl font-bold opacity-0 md:text-4xl"
           >
-            Nossos Serviços
+            {t("title")}
           </h2>
           <p ref={descRef} className="text-muted-foreground mx-auto max-w-2xl text-xl opacity-0">
-            Oferecemos {services.length} serviços psicológicos especializados para cuidar da sua
-            saúde mental e bem-estar.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -183,11 +184,10 @@ export function Services() {
                     animateCards();
                     animatePagination();
                   }}
-                  className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                    currentPage === index
+                  className={`h-3 w-3 rounded-full transition-all duration-300 ${currentPage === index
                       ? "bg-primary shadow-primary/50 w-8 shadow-lg"
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50 hover:scale-125"
-                  }`}
+                    }`}
                   aria-label={`Ir para página ${index + 1}`}
                 />
               ))}

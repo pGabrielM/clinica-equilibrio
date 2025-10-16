@@ -13,8 +13,10 @@ import {
   CardTitle,
 } from "@/components/commons/card";
 import anime from "@/lib/anime";
+import { useTranslations } from "next-intl";
 
 export function BookingForm() {
+  const t = useTranslations("booking");
   const [formData, setFormData] = useState<IBookingData>({
     name: "",
     phone: "",
@@ -79,17 +81,17 @@ export function BookingForm() {
   const validateField = (name: keyof IBookingData, value: string): string => {
     switch (name) {
       case "name":
-        return value.length < 3 ? "Nome deve ter pelo menos 3 caracteres" : "";
+        return value.length < 3 ? t("validations.nameMinLength") : "";
       case "phone":
         return !/^\(\d{2}\)\s?\d{4,5}-\d{4}$/.test(value) && value.length > 0
-          ? "Formato: (11) 99999-9999"
+          ? t("validations.phoneFormat")
           : "";
       case "service":
-        return !value ? "Selecione um serviço" : "";
+        return !value ? t("validations.serviceRequired") : "";
       case "date":
-        return !value ? "Selecione uma data" : "";
+        return !value ? t("validations.dateRequired") : "";
       case "time":
-        return !value ? "Selecione um horário" : "";
+        return !value ? t("validations.timeRequired") : "";
       default:
         return "";
     }
@@ -198,19 +200,17 @@ export function BookingForm() {
             ref={titleRef}
             className="text-foreground mb-4 text-3xl font-bold opacity-0 md:text-4xl"
           >
-            Agende sua Sessão
+            {t("title")}
           </h2>
           <p ref={descRef} className="text-muted-foreground mx-auto max-w-2xl text-xl opacity-0">
-            Preencha o formulário e entraremos em contato para confirmar seu horário.
+            {t("subtitle")}
           </p>
         </div>
 
         <Card ref={cardRef} className="mx-auto max-w-2xl border-2 opacity-0 shadow-xl">
           <CardHeader className="space-y-1 pb-6">
-            <CardTitle className="text-2xl">Formulário de Agendamento</CardTitle>
-            <CardDescription className="text-base">
-              Todos os campos são obrigatórios. Responderemos em até 24 horas.
-            </CardDescription>
+            <CardTitle className="text-2xl">{t("title")}</CardTitle>
+            <CardDescription className="text-base">{t("subtitle")}</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -233,7 +233,7 @@ export function BookingForm() {
                       d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                     />
                   </svg>
-                  Nome Completo
+                  {t("form.name")}
                 </label>
                 <Input
                   id="name"
@@ -243,7 +243,7 @@ export function BookingForm() {
                   onChange={handleChange}
                   onBlur={() => handleBlur("name")}
                   className={`transition-all ${touched.name && errors.name ? "border-red-500 focus:ring-red-500" : "focus:ring-primary"}`}
-                  placeholder="Digite seu nome completo"
+                  placeholder={t("form.name")}
                 />
                 {touched.name && errors.name && (
                   <p className="flex items-center gap-1 text-sm text-red-600">
@@ -279,7 +279,7 @@ export function BookingForm() {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  Telefone / WhatsApp
+                  {t("form.phone")}
                 </label>
                 <Input
                   id="phone"
@@ -289,7 +289,7 @@ export function BookingForm() {
                   onChange={handleChange}
                   onBlur={() => handleBlur("phone")}
                   className={`transition-all ${touched.phone && errors.phone ? "border-red-500 focus:ring-red-500" : "focus:ring-primary"}`}
-                  placeholder="(11) 99999-9999"
+                  placeholder={t("validations.phoneFormat")}
                 />
                 {touched.phone && errors.phone && (
                   <p className="flex items-center gap-1 text-sm text-red-600">
@@ -333,11 +333,10 @@ export function BookingForm() {
                   value={formData.service}
                   onChange={handleChange}
                   onBlur={() => handleBlur("service")}
-                  className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${
-                    touched.service && errors.service
+                  className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${touched.service && errors.service
                       ? "border-red-500 focus:ring-red-500"
                       : "border-border focus:ring-primary"
-                  }`}
+                    }`}
                 >
                   <option value="">Selecione um serviço</option>
                   {services.map((service) => (
@@ -439,11 +438,10 @@ export function BookingForm() {
                     value={formData.time}
                     onChange={handleChange}
                     onBlur={() => handleBlur("time")}
-                    className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${
-                      touched.time && errors.time
+                    className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${touched.time && errors.time
                         ? "border-red-500 focus:ring-red-500"
                         : "border-border focus:ring-primary"
-                    }`}
+                      }`}
                   >
                     <option value="">Selecione um horário</option>
                     <option value="08:00">08:00</option>

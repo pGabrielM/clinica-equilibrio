@@ -12,11 +12,22 @@
   "hero": {
     "title": "Mental Balance, Full Life",
     "subtitle": "Psychology and psychiatry clinic dedicated to your emotional well-being",
-    "cta": "Book Appointment"
+    "cta": "Book Appointment",
+    "badge": "In-Person and Online Service",
+    "trustBadge": "Years of Experience",
+    "patientsServed": "Patients Served",
+    "satisfaction": "Satisfaction",
+    "serviceLink": "See Our Services",
+    "features": {
+      "activePsychologists": "Active CRP Psychologists",
+      "flexibleSchedules": "Flexible Schedules",
+      "safeEnvironment": "Safe Environment"
+    }
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "We offer complete support for your mental health"
+    "subtitle": "We offer complete support for your mental health",
+    "learnMore": "Learn More"
   },
   "products": {
     "title": "Products and Resources",
@@ -36,6 +47,10 @@
       "email": "Email",
       "hours": "Opening Hours",
       "onlineService": "Online and In-Person Service",
+      "onlineInPerson": "Online and In-Person Service",
+      "viewMap": "View on Map",
+      "sendMessage": "Send Message",
+      "sendEmail": "Send Email",
       "schedule": {
         "weekdays": "Monday to Friday: 7am to 8pm",
         "saturday": "Saturday: 8am to 2pm"
@@ -90,6 +105,38 @@
     "social": {
       "title": "Social Media",
       "subtitle": "Connect with us"
+    }
+  },
+  "booking": {
+    "title": "Book Your Appointment",
+    "subtitle": "Schedule a session with our specialists",
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone",
+      "service": "Select Service",
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "submit": "Confirm Booking",
+      "selecting": "Booking..."
+    },
+    "validations": {
+      "nameMinLength": "Name must have at least 3 characters",
+      "phoneFormat": "Format: (11) 99999-9999",
+      "serviceRequired": "Please select a service",
+      "dateRequired": "Please select a date",
+      "timeRequired": "Please select a time"
+    },
+    "nextDays": "Next 7 days",
+    "availableTimes": "Available times",
+    "schedule": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "success": {
+      "title": "Booking Confirmed!",
+      "message": "Your appointment has been scheduled. We will contact you by phone or WhatsApp to confirm.",
+      "confirmation": "Check your email for details"
     }
   },
   "footer": {

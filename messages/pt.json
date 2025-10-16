@@ -12,11 +12,22 @@
   "hero": {
     "title": "Equilíbrio Mental, Vida Plena",
     "subtitle": "Clínica de psicologia e psiquiatria dedicada ao seu bem-estar emocional",
-    "cta": "Agendar Consulta"
+    "cta": "Agendar Consulta",
+    "badge": "Atendimento Presencial e Online",
+    "trustBadge": "Anos de Experiência",
+    "patientsServed": "Pacientes Atendidos",
+    "satisfaction": "Satisfação",
+    "serviceLink": "Conheça Nossos Serviços",
+    "features": {
+      "activePsychologists": "Psicólogos CRP Ativos",
+      "flexibleSchedules": "Horários Flexíveis",
+      "safeEnvironment": "Ambiente Seguro"
+    }
   },
   "services": {
     "title": "Nossos Serviços",
-    "subtitle": "Oferecemos acompanhamento completo para sua saúde mental"
+    "subtitle": "Oferecemos acompanhamento completo para sua saúde mental",
+    "learnMore": "Saiba Mais"
   },
   "products": {
     "title": "Produtos e Recursos",
@@ -36,6 +47,10 @@
       "email": "E-mail",
       "hours": "Horário de Atendimento",
       "onlineService": "Atendimento Online e Presencial",
+      "onlineInPerson": "Atendimento Online e Presencial",
+      "viewMap": "Ver no Mapa",
+      "sendMessage": "Enviar Mensagem",
+      "sendEmail": "Enviar E-mail",
       "schedule": {
         "weekdays": "Segunda a Sexta: 7h às 20h",
         "saturday": "Sábado: 8h às 14h"
@@ -90,6 +105,38 @@
     "social": {
       "title": "Redes Sociais",
       "subtitle": "Conecte-se conosco"
+    }
+  },
+  "booking": {
+    "title": "Agende Sua Consulta",
+    "subtitle": "Escolha a data e horário que melhor se adequa a você",
+    "form": {
+      "name": "Nome Completo",
+      "phone": "Telefone",
+      "service": "Selecione um serviço",
+      "date": "Data Preferida",
+      "time": "Horário Preferido",
+      "submit": "Confirmar Agendamento",
+      "selecting": "Agendando..."
+    },
+    "validations": {
+      "nameMinLength": "Nome deve ter pelo menos 3 caracteres",
+      "phoneFormat": "Formato: (11) 99999-9999",
+      "serviceRequired": "Selecione um serviço",
+      "dateRequired": "Selecione uma data",
+      "timeRequired": "Selecione um horário"
+    },
+    "nextDays": "Próximos 7 dias",
+    "availableTimes": "Horários disponíveis",
+    "schedule": {
+      "morning": "Manhã",
+      "afternoon": "Tarde",
+      "evening": "Noite"
+    },
+    "success": {
+      "title": "Agendamento Confirmado!",
+      "message": "Sua consulta foi agendada. Entraremos em contato por telefone ou WhatsApp para confirmar.",
+      "confirmation": "Confira seu e-mail para os detalhes"
     }
   },
   "footer": {
