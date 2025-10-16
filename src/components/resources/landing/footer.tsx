@@ -2,9 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Facebook, Instagram, Linkedin, MessageCircle, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export function Footer() {
+  const t = useTranslations("footer");
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -21,22 +25,22 @@ export function Footer() {
 
   const footerLinks = {
     services: [
-      { name: "Psicoterapia Individual", href: "#services" },
-      { name: "Terapia de Casal", href: "#services" },
-      { name: "Psicologia Infantil", href: "#services" },
-      { name: "Terapia em Grupo", href: "#services" },
+      { name: t("services.psychotherapy"), href: "#services" },
+      { name: t("services.coupleTherapy"), href: "#services" },
+      { name: t("services.childPsychology"), href: "#services" },
+      { name: t("services.groupTherapy"), href: "#services" },
     ],
     company: [
-      { name: "Sobre Nós", href: "#" },
-      { name: "Nossa Equipe", href: "#team" },
-      { name: "Blog", href: "#blog" },
-      { name: "Depoimentos", href: "#" },
+      { name: t("company.about"), href: "#" },
+      { name: t("company.team"), href: "#team" },
+      { name: t("company.blog"), href: "#blog" },
+      { name: t("company.testimonials"), href: "#" },
     ],
     support: [
-      { name: "Contato", href: "#contact" },
-      { name: "FAQ", href: "#" },
-      { name: "Agendamento", href: "#booking" },
-      { name: "Política de Privacidade", href: "#" },
+      { name: t("support.contact"), href: "#contact" },
+      { name: t("support.faq"), href: "#" },
+      { name: t("support.booking"), href: "#booking" },
+      { name: t("support.privacy"), href: "#" },
     ],
   };
 
@@ -56,20 +60,19 @@ export function Footer() {
               </h3>
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-sm leading-relaxed">
-              Cuidando da sua saúde mental com profissionalismo, empatia e acolhimento. Mais de 10
-              anos transformando vidas.
+              {t("description")}
             </p>
 
             {/* Newsletter */}
             <div className="mb-6">
-              <h4 className="mb-3 font-semibold">Newsletter</h4>
+              <h4 className="mb-3 font-semibold">{t("newsletter.title")}</h4>
               {!subscribed ? (
                 <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Seu e-mail"
+                    placeholder={t("newsletter.placeholder")}
                     className="text-primary-foreground placeholder:text-primary-foreground/50 flex-1 rounded-lg border border-white/20 bg-white/10 px-4 py-2 focus:ring-2 focus:ring-white/50 focus:outline-none"
                     required
                   />
@@ -77,13 +80,13 @@ export function Footer() {
                     type="submit"
                     className="text-primary rounded-lg bg-white px-6 py-2 font-semibold transition-colors hover:bg-white/90"
                   >
-                    Assinar
+                    {t("newsletter.subscribe")}
                   </button>
                 </form>
               ) : (
                 <div className="flex items-center gap-2 rounded-lg bg-green-400/10 px-4 py-2 text-green-400">
                   <Check className="h-5 w-5" />
-                  <span>Inscrito com sucesso!</span>
+                  <span>{t("newsletter.success")}</span>
                 </div>
               )}
             </div>
@@ -92,38 +95,38 @@ export function Footer() {
             <div className="flex gap-3">
               <button
                 onClick={(e) => e.preventDefault()}
-                className="hover:text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-white"
+                className="flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-[#1877F2] hover:text-white"
                 aria-label="Facebook"
               >
-                <Facebook className="h-5 w-5" />
+                <FaFacebook className="h-5 w-5" />
               </button>
               <button
                 onClick={(e) => e.preventDefault()}
-                className="hover:text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-white"
+                className="flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#E1306C] hover:to-[#F77737] hover:text-white"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <FaInstagram className="h-5 w-5" />
               </button>
               <button
                 onClick={(e) => e.preventDefault()}
-                className="hover:text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-white"
-                aria-label="LinkedIn"
+                className="flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-[#000000] hover:text-white"
+                aria-label="X (Twitter)"
               >
-                <Linkedin className="h-5 w-5" />
+                <FaXTwitter className="h-5 w-5" />
               </button>
               <button
                 onClick={(e) => e.preventDefault()}
-                className="hover:text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-white"
+                className="flex h-10 w-10 cursor-default items-center justify-center rounded-lg bg-white/10 transition-all hover:scale-110 hover:bg-[#25D366] hover:text-white"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="h-5 w-5" />
+                <FaWhatsapp className="h-5 w-5" />
               </button>
             </div>
           </div>
 
           {/* Services Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Serviços</h4>
+            <h4 className="mb-4 text-lg font-semibold">{t("servicesTitle")}</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -140,7 +143,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Empresa</h4>
+            <h4 className="mb-4 text-lg font-semibold">{t("companyTitle")}</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -157,7 +160,7 @@ export function Footer() {
 
           {/* Support Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Suporte</h4>
+            <h4 className="mb-4 text-lg font-semibold">{t("supportTitle")}</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
@@ -176,37 +179,32 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-primary-foreground/20 border-t pt-8">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="text-primary-foreground/80 text-sm">
-              © 2025 Clínica Equilíbrio. Todos os direitos reservados.
-            </div>
+            <div className="text-primary-foreground/80 text-sm">{t("copyright")}</div>
             <div className="flex flex-wrap gap-6 text-sm md:justify-end">
               <Link
                 href="#"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                Termos de Uso
+                {t("terms")}
               </Link>
               <Link
                 href="#"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                Política de Privacidade
+                {t("privacy")}
               </Link>
               <Link
                 href="#"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                Cookies
+                {t("cookies")}
               </Link>
             </div>
           </div>
 
           {/* Additional Info */}
           <div className="border-primary-foreground/10 mt-6 border-t pt-6">
-            <p className="text-primary-foreground/60 text-center text-xs">
-              CRP: 06/12345 | CNPJ: 12.345.678/0001-90 | Responsável Técnico: Dra. Ana Carolina
-              Silva
-            </p>
+            <p className="text-primary-foreground/60 text-center text-xs">{t("legalInfo")}</p>
           </div>
         </div>
       </div>

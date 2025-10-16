@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "team": "Team",
+    "booking": "Booking",
+    "contact": "Contact",
+    "schedule": "Schedule",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Mental Balance, Full Life",
+    "subtitle": "Psychology and psychiatry clinic dedicated to your emotional well-being",
+    "cta": "Book Appointment"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer complete support for your mental health"
+  },
+  "products": {
+    "title": "Products and Resources",
+    "subtitle": "Materials and tools to support your treatment"
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Professionals specialized in mental health"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We are here to take care of your mental health",
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone / WhatsApp",
+      "email": "Email",
+      "hours": "Opening Hours",
+      "onlineService": "Online and In-Person Service",
+      "schedule": {
+        "weekdays": "Monday to Friday: 7am to 8pm",
+        "saturday": "Saturday: 8am to 2pm"
+      }
+    },
+    "form": {
+      "title": "Get in Touch",
+      "subtitle": "Fill out the form below and our team will respond soon. Humanized and confidential service.",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(00) 00000-0000",
+      "subject": "Subject",
+      "subjectPlaceholder": "What would you like to talk about?",
+      "subjectOptions": {
+        "firstAppointment": "First Appointment",
+        "return": "Return/Follow-up",
+        "information": "Information Request",
+        "urgency": "Urgent Matter",
+        "other": "Other"
+      },
+      "preferredContact": "Preferred Contact Method",
+      "preferredContactOptions": {
+        "phone": "Phone",
+        "email": "Email",
+        "whatsapp": "WhatsApp"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you...",
+      "messageMinLength": "Minimum {count} characters required",
+      "privacyNotice": "Your information will be treated with absolute confidentiality and security. We comply with LGPD (General Data Protection Law).",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "errors": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "phoneRequired": "Phone is required",
+        "phoneInvalid": "Please enter a valid phone number",
+        "subjectRequired": "Please select a subject",
+        "messageRequired": "Message is required",
+        "messageShort": "Message must be at least 10 characters long"
+      },
+      "success": {
+        "title": "Message sent successfully!",
+        "message": "We received your message and our team will contact you within 24 business hours.",
+        "confirmation": "A confirmation email was sent to {email}"
+      }
+    },
+    "social": {
+      "title": "Social Media",
+      "subtitle": "Connect with us"
+    }
+  },
+  "footer": {
+    "tagline": "Taking care of your mental health with professionalism, empathy and welcoming",
+    "taglineClinic": "Psychology Clinic",
+    "description": "Dedicated to providing comprehensive mental health care with a team of experienced professionals committed to your emotional well-being and personal growth.",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Your email",
+      "submit": "Subscribe",
+      "subscribe": "Subscribe",
+      "success": "Successfully subscribed!"
+    },
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "supportTitle": "Support",
+    "services": {
+      "psychotherapy": "Psychotherapy",
+      "coupleTherapy": "Couple Therapy",
+      "childPsychology": "Child Psychology",
+      "groupTherapy": "Group Therapy"
+    },
+    "company": {
+      "about": "About Us",
+      "team": "Our Team",
+      "blog": "Blog",
+      "testimonials": "Testimonials"
+    },
+    "support": {
+      "contact": "Contact",
+      "faq": "FAQ",
+      "booking": "Book Appointment",
+      "privacy": "Privacy Policy"
+    },
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "copyright": "© 2025 Clínica Equilíbrio. All rights reserved.",
+    "legalInfo": "CRP: 06/12345 | CNPJ: 12.345.678/0001-90 | Technical Manager: Dr. Ana Carolina Silva"
+  }
+}

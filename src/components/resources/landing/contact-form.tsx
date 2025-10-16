@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/commons/button";
 import { Input } from "@/components/commons/input";
 import {
@@ -21,6 +22,7 @@ interface IEnhancedContactData {
 }
 
 export function ContactForm() {
+  const t = useTranslations("contact.form");
   const [formData, setFormData] = useState<IEnhancedContactData>({
     name: "",
     email: "",
@@ -36,29 +38,29 @@ export function ContactForm() {
     const newErrors: Partial<Record<keyof IEnhancedContactData, string>> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Nome é obrigatório";
+      newErrors.name = t("errors.nameRequired");
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email é obrigatório";
+      newErrors.email = t("errors.emailRequired");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Email inválido";
+      newErrors.email = t("errors.emailInvalid");
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Telefone é obrigatório";
+      newErrors.phone = t("errors.phoneRequired");
     } else if (!/^\(\d{2}\)\s?\d{4,5}-?\d{4}$/.test(formData.phone.replace(/\s/g, ""))) {
-      newErrors.phone = "Telefone inválido. Use: (XX) XXXXX-XXXX";
+      newErrors.phone = t("errors.phoneInvalid");
     }
 
     if (!formData.subject) {
-      newErrors.subject = "Selecione um motivo";
+      newErrors.subject = t("errors.subjectRequired");
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Mensagem é obrigatória";
+      newErrors.message = t("errors.messageRequired");
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Mensagem muito curta (mínimo 10 caracteres)";
+      newErrors.message = t("errors.messageShort");
     }
 
     setErrors(newErrors);
@@ -121,7 +123,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <Card className="border-2 shadow-xl">
+      <Card className="h-fit border-2 shadow-xl">
         <CardContent className="py-16">
           <div className="text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
@@ -139,15 +141,11 @@ export function ContactForm() {
                 />
               </svg>
             </div>
-            <h3 className="text-foreground mb-3 text-2xl font-bold">
-              Mensagem enviada com sucesso!
-            </h3>
-            <p className="text-muted-foreground mx-auto max-w-md">
-              Recebemos sua mensagem e nossa equipe entrará em contato em até 24 horas úteis.
-            </p>
+            <h3 className="text-foreground mb-3 text-2xl font-bold">{t("success.title")}</h3>
+            <p className="text-muted-foreground mx-auto max-w-md">{t("success.message")}</p>
             <div className="bg-primary/5 mt-6 inline-block rounded-lg p-4">
               <p className="text-muted-foreground text-sm">
-                📧 Um email de confirmação foi enviado para <strong>{formData.email}</strong>
+                📧 {t("success.confirmation", { email: formData.email })}
               </p>
             </div>
           </div>
@@ -157,13 +155,10 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="border-2 shadow-xl">
+    <Card className="h-fit border-2 shadow-xl">
       <CardHeader className="space-y-1 pb-6">
-        <CardTitle className="text-2xl">Entre em Contato</CardTitle>
-        <CardDescription className="text-base">
-          Preencha o formulário abaixo e nossa equipe responderá em breve. Atendimento humanizado e
-          confidencial.
-        </CardDescription>
+        <CardTitle className="text-2xl">{t("title")}</CardTitle>
+        <CardDescription className="text-base">{t("subtitle")}</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -173,7 +168,7 @@ export function ContactForm() {
               htmlFor="contact-name"
               className="text-foreground mb-2 block text-sm font-medium"
             >
-              Nome completo <span className="text-red-500">*</span>
+              {t("name")} <span className="text-red-500">*</span>
             </label>
             <Input
               id="contact-name"
@@ -181,7 +176,7 @@ export function ContactForm() {
               type="text"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Seu nome completo"
+              placeholder={t("namePlaceholder")}
               className={errors.name ? "border-red-500 focus-visible:ring-red-500" : ""}
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-error" : undefined}
@@ -200,7 +195,7 @@ export function ContactForm() {
                 htmlFor="contact-email"
                 className="text-foreground mb-2 block text-sm font-medium"
               >
-                Email <span className="text-red-500">*</span>
+                {t("email")} <span className="text-red-500">*</span>
               </label>
               <Input
                 id="contact-email"
@@ -208,7 +203,7 @@ export function ContactForm() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="seu@email.com"
+                placeholder={t("emailPlaceholder")}
                 className={errors.email ? "border-red-500 focus-visible:ring-red-500" : ""}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
@@ -225,7 +220,7 @@ export function ContactForm() {
                 htmlFor="contact-phone"
                 className="text-foreground mb-2 block text-sm font-medium"
               >
-                Telefone <span className="text-red-500">*</span>
+                {t("phone")} <span className="text-red-500">*</span>
               </label>
               <Input
                 id="contact-phone"
@@ -233,7 +228,7 @@ export function ContactForm() {
                 type="tel"
                 value={formData.phone}
                 onChange={handlePhoneChange}
-                placeholder="(41) 99999-9999"
+                placeholder={t("phonePlaceholder")}
                 className={errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -253,7 +248,7 @@ export function ContactForm() {
                 htmlFor="contact-subject"
                 className="text-foreground mb-2 block text-sm font-medium"
               >
-                Motivo do contato <span className="text-red-500">*</span>
+                {t("subject")} <span className="text-red-500">*</span>
               </label>
               <select
                 id="contact-subject"
@@ -266,12 +261,12 @@ export function ContactForm() {
                 aria-invalid={!!errors.subject}
                 aria-describedby={errors.subject ? "subject-error" : undefined}
               >
-                <option value="">Selecione uma opção</option>
-                <option value="primeira-consulta">Agendar primeira consulta</option>
-                <option value="retorno">Retorno de paciente</option>
-                <option value="informacoes">Informações sobre serviços</option>
-                <option value="urgencia">Caso de urgência</option>
-                <option value="outros">Outros assuntos</option>
+                <option value="">{t("subjectPlaceholder")}</option>
+                <option value="primeira-consulta">{t("subjectOptions.firstAppointment")}</option>
+                <option value="retorno">{t("subjectOptions.return")}</option>
+                <option value="informacoes">{t("subjectOptions.information")}</option>
+                <option value="urgencia">{t("subjectOptions.urgency")}</option>
+                <option value="outros">{t("subjectOptions.other")}</option>
               </select>
               {errors.subject && (
                 <p id="subject-error" className="mt-1 text-sm text-red-600">
@@ -285,7 +280,7 @@ export function ContactForm() {
                 htmlFor="preferred-contact"
                 className="text-foreground mb-2 block text-sm font-medium"
               >
-                Forma de contato preferida
+                {t("preferredContact")}
               </label>
               <select
                 id="preferred-contact"
@@ -294,9 +289,9 @@ export function ContactForm() {
                 onChange={handleChange}
                 className="border-input focus:ring-primary bg-background w-full rounded-md border px-3 py-2 focus:border-transparent focus:ring-2 focus:outline-none"
               >
-                <option value="email">Email</option>
-                <option value="phone">Telefone</option>
-                <option value="whatsapp">WhatsApp</option>
+                <option value="email">{t("preferredContactOptions.email")}</option>
+                <option value="phone">{t("preferredContactOptions.phone")}</option>
+                <option value="whatsapp">{t("preferredContactOptions.whatsapp")}</option>
               </select>
             </div>
           </div>
@@ -307,7 +302,7 @@ export function ContactForm() {
               htmlFor="contact-message"
               className="text-foreground mb-2 block text-sm font-medium"
             >
-              Mensagem <span className="text-red-500">*</span>
+              {t("message")} <span className="text-red-500">*</span>
             </label>
             <textarea
               id="contact-message"
@@ -315,7 +310,7 @@ export function ContactForm() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              placeholder="Descreva brevemente o motivo do seu contato..."
+              placeholder={t("messagePlaceholder")}
               className={`w-full resize-none rounded-md border px-3 py-2 focus:border-transparent focus:ring-2 focus:outline-none ${
                 errors.message
                   ? "border-red-500 focus:ring-red-500"
@@ -330,22 +325,18 @@ export function ContactForm() {
               </p>
             )}
             <p className="text-muted-foreground mt-1 text-xs">
-              Mínimo de 10 caracteres ({formData.message.length}/10)
+              {t("messageMinLength", { count: formData.message.length })}
             </p>
           </div>
 
           {/* Privacy Notice */}
           <div className="bg-muted/50 border-border rounded-lg border p-4">
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              🔒 <strong>Privacidade e Confidencialidade:</strong> Todas as informações fornecidas
-              são tratadas com sigilo profissional conforme o Código de Ética da Psicologia e a Lei
-              Geral de Proteção de Dados (LGPD).
-            </p>
+            <p className="text-muted-foreground text-xs leading-relaxed">{t("privacyNotice")}</p>
           </div>
 
           {/* Submit Button */}
           <Button type="submit" className="h-12 w-full text-base font-semibold">
-            Enviar mensagem
+            {t("submit")}
           </Button>
         </form>
       </CardContent>

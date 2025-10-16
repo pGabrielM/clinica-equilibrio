@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/commons/button";
+import { LanguageMenu } from "@/components/commons/language-menu";
 import { MobileMenu } from "./mobile-menu";
 import anime from "@/lib/anime";
 
 export function Navbar() {
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
@@ -90,7 +93,7 @@ export function Navbar() {
                 activeSection === "services" ? "text-primary font-semibold" : ""
               }`}
             >
-              Serviços
+              {t("services")}
               <span
                 className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
                   activeSection === "services" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -104,7 +107,7 @@ export function Navbar() {
                 activeSection === "team" ? "text-primary font-semibold" : ""
               }`}
             >
-              Equipe
+              {t("team")}
               <span
                 className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
                   activeSection === "team" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -118,7 +121,7 @@ export function Navbar() {
                 activeSection === "blog" ? "text-primary font-semibold" : ""
               }`}
             >
-              Blog
+              {t("blog")}
               <span
                 className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
                   activeSection === "blog" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -132,7 +135,7 @@ export function Navbar() {
                 activeSection === "booking" ? "text-primary font-semibold" : ""
               }`}
             >
-              Agendamento
+              {t("booking")}
               <span
                 className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
                   activeSection === "booking" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -146,7 +149,7 @@ export function Navbar() {
                 activeSection === "contact" ? "text-primary font-semibold" : ""
               }`}
             >
-              Contato
+              {t("contact")}
               <span
                 className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
                   activeSection === "contact" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -154,10 +157,12 @@ export function Navbar() {
               />
             </Link>
             <Link href="#booking" onClick={(e) => handleNavClick(e, "#booking")}>
-              <Button className="nav-link">Agende sua sessão</Button>
+              <Button className="nav-link">{t("schedule")}</Button>
             </Link>
+            <LanguageMenu />
           </div>
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageMenu />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-muted-foreground hover:text-primary"

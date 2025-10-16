@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "products": "Productos",
+    "team": "Equipo",
+    "booking": "Reserva",
+    "contact": "Contacto",
+    "schedule": "Agendar",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Equilibrio Mental, Vida Plena",
+    "subtitle": "Clínica de psicología y psiquiatría dedicada a tu bienestar emocional",
+    "cta": "Reservar Cita"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Ofrecemos acompañamiento completo para tu salud mental"
+  },
+  "products": {
+    "title": "Productos y Recursos",
+    "subtitle": "Materiales y herramientas para apoyar tu tratamiento"
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Profesionales especializados en salud mental"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para cuidar tu salud mental",
+    "info": {
+      "title": "Información de Contacto",
+      "address": "Dirección",
+      "phone": "Teléfono / WhatsApp",
+      "email": "Correo Electrónico",
+      "hours": "Horario de Atención",
+      "onlineService": "Atención Online y Presencial",
+      "schedule": {
+        "weekdays": "Lunes a Viernes: 7h a 20h",
+        "saturday": "Sábado: 8h a 14h"
+      }
+    },
+    "form": {
+      "title": "Contáctanos",
+      "subtitle": "Completa el formulario y nuestro equipo responderá pronto. Atención humanizada y confidencial.",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "(00) 00000-0000",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿Sobre qué te gustaría hablar?",
+      "subjectOptions": {
+        "firstAppointment": "Primera Cita",
+        "return": "Seguimiento/Retorno",
+        "information": "Solicitud de Información",
+        "urgency": "Asunto Urgente",
+        "other": "Otro"
+      },
+      "preferredContact": "Forma de Contacto Preferida",
+      "preferredContactOptions": {
+        "phone": "Teléfono",
+        "email": "Correo Electrónico",
+        "whatsapp": "WhatsApp"
+      },
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
+      "messageMinLength": "Mínimo de {count} caracteres requeridos",
+      "privacyNotice": "Tu información será tratada con total confidencialidad y seguridad. Cumplimos con la LGPD (Ley General de Protección de Datos).",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "errors": {
+        "nameRequired": "El nombre es obligatorio",
+        "emailRequired": "El correo electrónico es obligatorio",
+        "emailInvalid": "Por favor, ingresa un correo válido",
+        "phoneRequired": "El teléfono es obligatorio",
+        "phoneInvalid": "Por favor, ingresa un teléfono válido",
+        "subjectRequired": "Por favor, selecciona un asunto",
+        "messageRequired": "El mensaje es obligatorio",
+        "messageShort": "El mensaje debe tener al menos 10 caracteres"
+      },
+      "success": {
+        "title": "¡Mensaje enviado con éxito!",
+        "message": "Recibimos tu mensaje y nuestro equipo se pondrá en contacto en 24 horas hábiles.",
+        "confirmation": "Un email de confirmación fue enviado a {email}"
+      }
+    },
+    "social": {
+      "title": "Redes Sociales",
+      "subtitle": "Conéctate con nosotros"
+    }
+  },
+  "footer": {
+    "tagline": "Cuidando tu salud mental con profesionalismo, empatía y acogida",
+    "taglineClinic": "Clínica de Psicología",
+    "description": "Dedicada a proporcionar atención integral de salud mental con un equipo de profesionales experimentados comprometidos con tu bienestar emocional y crecimiento personal.",
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Tu correo electrónico",
+      "submit": "Suscribirse",
+      "subscribe": "Suscribirse",
+      "success": "¡Suscrito con éxito!"
+    },
+    "servicesTitle": "Servicios",
+    "companyTitle": "Empresa",
+    "supportTitle": "Soporte",
+    "services": {
+      "psychotherapy": "Psicoterapia",
+      "coupleTherapy": "Terapia de Parejas",
+      "childPsychology": "Psicología Infantil",
+      "groupTherapy": "Terapia Grupal"
+    },
+    "company": {
+      "about": "Acerca de Nosotros",
+      "team": "Nuestro Equipo",
+      "blog": "Blog",
+      "testimonials": "Testimonios"
+    },
+    "support": {
+      "contact": "Contacto",
+      "faq": "Preguntas Frecuentes",
+      "booking": "Agendar Consulta",
+      "privacy": "Política de Privacidad"
+    },
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "copyright": "© 2025 Clínica Equilíbrio. Todos los derechos reservados.",
+    "legalInfo": "CRP: 06/12345 | CNPJ: 12.345.678/0001-90 | Responsable Técnico: Dra. Ana Carolina Silva"
+  }
+}

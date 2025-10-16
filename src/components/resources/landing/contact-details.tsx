@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -5,22 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/commons/card";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  ExternalLink,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 export function ContactDetails() {
+  const t = useTranslations("contact");
+
   const contactItems = [
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: "Endereço",
+      title: t("info.address"),
       content: (
         <>
           Rua XV de Novembro, 1234
@@ -31,34 +29,32 @@ export function ContactDetails() {
         </>
       ),
       link: "https://maps.google.com/?q=Rua+XV+de+Novembro+Curitiba",
-      linkText: "Ver no mapa",
+      linkText: t("info.viewMap"),
     },
     {
       icon: <Phone className="h-6 w-6" />,
-      title: "Telefone / WhatsApp",
+      title: t("info.phone"),
       content: "(41) 3322-4455",
       link: "https://wa.me/5541933224455",
-      linkText: "Enviar mensagem",
+      linkText: t("info.sendMessage"),
     },
     {
       icon: <Mail className="h-6 w-6" />,
-      title: "Email",
+      title: t("info.email"),
       content: "contato@clinicaequilibrio.psi.br",
       link: "mailto:contato@clinicaequilibrio.psi.br",
-      linkText: "Enviar email",
+      linkText: t("info.sendEmail"),
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "Horário de Atendimento",
+      title: t("info.hours"),
       content: (
         <>
-          Segunda a Sexta: 7h às 20h
+          {t("info.schedule.weekdays")}
           <br />
-          Sábado: 8h às 14h
+          {t("info.schedule.saturday")}
           <br />
-          <span className="text-sm font-medium text-green-600">
-            Atendimento Online e Presencial
-          </span>
+          <span className="text-sm font-medium text-green-600">{t("info.onlineInPerson")}</span>
         </>
       ),
     },
@@ -67,10 +63,8 @@ export function ContactDetails() {
   return (
     <Card className="border-2 shadow-xl">
       <CardHeader className="space-y-1 pb-6">
-        <CardTitle className="text-2xl">Informações de Contato</CardTitle>
-        <CardDescription className="text-base">
-          Estamos sempre disponíveis para atendê-lo da melhor forma.
-        </CardDescription>
+        <CardTitle className="text-2xl">{t("info.title")}</CardTitle>
+        <CardDescription className="text-base">{t("subtitle")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {contactItems.map((item, index) => (
@@ -105,28 +99,35 @@ export function ContactDetails() {
 
         {/* Social Media Links */}
         <div className="mt-6 border-t pt-6">
-          <h4 className="text-foreground mb-4 font-semibold">Redes Sociais</h4>
+          <h4 className="text-foreground mb-4 font-semibold">{t("social.title")}</h4>
           <div className="flex gap-3">
             <button
               onClick={(e) => e.preventDefault()}
-              className="bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110"
+              className="bg-primary/10 text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110 hover:bg-[#1877F2] hover:text-white"
               aria-label="Facebook"
             >
-              <Facebook className="h-5 w-5" />
+              <FaFacebook className="h-5 w-5" />
             </button>
             <button
               onClick={(e) => e.preventDefault()}
-              className="bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110"
+              className="bg-primary/10 text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#E1306C] hover:to-[#F77737] hover:text-white"
               aria-label="Instagram"
             >
-              <Instagram className="h-5 w-5" />
+              <FaInstagram className="h-5 w-5" />
             </button>
             <button
               onClick={(e) => e.preventDefault()}
-              className="bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110"
-              aria-label="LinkedIn"
+              className="bg-primary/10 text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110 hover:bg-[#000000] hover:text-white"
+              aria-label="X (Twitter)"
             >
-              <Linkedin className="h-5 w-5" />
+              <FaXTwitter className="h-5 w-5" />
+            </button>
+            <button
+              onClick={(e) => e.preventDefault()}
+              className="bg-primary/10 text-primary flex h-10 w-10 cursor-default items-center justify-center rounded-lg transition-all hover:scale-110 hover:bg-[#25D366] hover:text-white"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp className="h-5 w-5" />
             </button>
           </div>
         </div>
