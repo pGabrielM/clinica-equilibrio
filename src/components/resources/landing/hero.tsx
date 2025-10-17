@@ -226,8 +226,12 @@ export function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-foreground font-semibold">Primeira Consulta</div>
-                      <div className="text-muted-foreground text-sm">Avaliação Gratuita</div>
+                      <div className="text-foreground font-semibold">
+                        {t("features.firstAppointment")}
+                      </div>
+                      <div className="text-muted-foreground text-sm">
+                        {t("features.freeEvaluation")}
+                      </div>
                     </div>
                   </div>
                 </div>

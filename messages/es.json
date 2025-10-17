@@ -21,7 +21,9 @@
     "features": {
       "activePsychologists": "Psicólogos CRP Activos",
       "flexibleSchedules": "Horarios Flexibles",
-      "safeEnvironment": "Ambiente Seguro"
+      "safeEnvironment": "Ambiente Seguro",
+      "firstAppointment": "Primera Consulta",
+      "freeEvaluation": "Evaluación Gratuita"
     }
   },
   "services": {
@@ -37,9 +39,14 @@
     "title": "Nuestro Equipo",
     "subtitle": "Profesionales especializados en salud mental"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Artículos sobre salud mental, bienestar emocional y consejos psicológicos para una vida equilibrada.",
+    "readMore": "Leer más"
+  },
   "contact": {
-    "title": "Contáctanos",
-    "subtitle": "Estamos aquí para cuidar tu salud mental",
+    "title": "Ponte en Contacto",
+    "subtitle": "Estamos aquí para ayudarte. Contáctanos para cualquier pregunta o citas.",
     "info": {
       "title": "Información de Contacto",
       "address": "Dirección",
@@ -136,7 +143,10 @@
     "success": {
       "title": "¡Reserva Confirmada!",
       "message": "Tu cita ha sido programada. Nos pondremos en contacto por teléfono o WhatsApp para confirmar.",
-      "confirmation": "Revisa tu correo para los detalles"
+      "confirmation": "Revisa tu correo para los detalles",
+      "received": "¡Reserva Recibida!",
+      "contactSoon": "Nos pondremos en contacto pronto para confirmar tu cita.",
+      "responseTime": "Tiempo de respuesta: hasta 24h"
     }
   },
   "footer": {
@@ -176,5 +186,127 @@
     "cookies": "Política de Cookies",
     "copyright": "© 2025 Clínica Equilíbrio. Todos los derechos reservados.",
     "legalInfo": "CRP: 06/12345 | CNPJ: 12.345.678/0001-90 | Responsable Técnico: Dra. Ana Carolina Silva"
+  },
+  "services_data": {
+    "1": {
+      "title": "Psicoterapia Individual",
+      "description": "Atención psicológica individualizada para ansiedad, depresión, autoestima y desarrollo personal."
+    },
+    "2": {
+      "title": "Terapia de Pareja",
+      "description": "Acompañamiento terapéutico para parejas que buscan mejorar la comunicación y fortalecer relaciones."
+    },
+    "3": {
+      "title": "Psiquiatría",
+      "description": "Evaluación, diagnóstico y tratamiento medicamentoso de trastornos mentales por médicos especializados."
+    },
+    "4": {
+      "title": "Terapia Infantil",
+      "description": "Atención especializada para niños y adolescentes con dificultades emocionales y conductuales."
+    },
+    "5": {
+      "title": "Terapia en Grupo",
+      "description": "Sesiones terapéuticas grupales para compartir experiencias y desarrollar habilidades sociales."
+    },
+    "6": {
+      "title": "Orientación Vocacional",
+      "description": "Apoyo psicológico para la elección de carrera y transiciones profesionales con autoconocimiento."
+    },
+    "7": {
+      "title": "Evaluación Psicológica",
+      "description": "Evaluación completa con pruebas psicológicas para diagnóstico y orientación terapéutica adecuada."
+    },
+    "8": {
+      "title": "Terapia Familiar",
+      "description": "Acompañamiento sistémico para familias que buscan mejorar dinámicas y resolver conflictos."
+    },
+    "9": {
+      "title": "Neuropsicología",
+      "description": "Evaluación y rehabilitación de funciones cognitivas como memoria, atención y lenguaje."
+    },
+    "10": {
+      "title": "Psicoterapia en Línea",
+      "description": "Atención psicológica a distancia con la misma calidad y confidencialidad del servicio presencial."
+    }
+  },
+  "team_data": {
+    "1": {
+      "name": "Dra. Ana Carolina Ribeiro",
+      "specialty": "Psicóloga Clínica - CRP 08/12345",
+      "bio": "Especialista en Terapia Cognitivo-Conductual con 12 años de experiencia en atención de adultos y adolescentes."
+    },
+    "2": {
+      "name": "Dr. Rafael Mendes",
+      "specialty": "Psiquiatra - CRM 12345",
+      "bio": "Médico psiquiatra con enfoque en trastornos de ansiedad y depresión, práctica humanizada y basada en evidencia."
+    },
+    "3": {
+      "name": "Dra. Juliana Costa",
+      "specialty": "Psicóloga Infantil - CRP 08/23456",
+      "bio": "Psicóloga especializada en atención infantil y familiar, formada en ludoterapia y desarrollo infantil."
+    },
+    "4": {
+      "name": "Dr. Marcos Almeida",
+      "specialty": "Psicólogo y Terapeuta de Pareja - CRP 08/34567",
+      "bio": "Especialista en terapia de pareja y familiar con enfoque sistémico y más de 10 años de experiencia clínica."
+    },
+    "5": {
+      "name": "Dra. Fernanda Lima",
+      "specialty": "Neuropsicóloga - CRP 08/45678",
+      "bio": "Neuropsicóloga especializada en evaluación cognitiva y rehabilitación de funciones cerebrales superiores."
+    },
+    "6": {
+      "name": "Dr. Carlos Eduardo Santos",
+      "specialty": "Psicólogo Organizacional - CRP 08/56789",
+      "bio": "Especialista en orientación vocacional y desarrollo de carrera, coach profesional certificado."
+    },
+    "7": {
+      "name": "Dra. Beatriz Rodrigues",
+      "specialty": "Psicóloga de Adolescentes - CRP 08/67890",
+      "bio": "Psicóloga enfocada en adolescentes, especialista en trastornos del humor y ansiedad en la adolescencia."
+    },
+    "8": {
+      "name": "Dr. Paulo Henrique Dias",
+      "specialty": "Psicoterapeuta Familiar - CRP 08/78901",
+      "bio": "Terapeuta familiar sistémico con especialización en constelación familiar y dinámicas interpersonales."
+    }
+  },
+  "blog_data": {
+    "1": {
+      "title": "Ansiedad: Cómo Identificar y Buscar Ayuda",
+      "excerpt": "Comprenda los signos de la ansiedad y sepa cuándo buscar a un profesional de salud mental.",
+      "category": "Ansiedad",
+      "author": "Dra. Ana Carolina Ribeiro"
+    },
+    "2": {
+      "title": "Depresión: Más Allá de la Tristeza",
+      "excerpt": "Comprenda la diferencia entre tristeza normal y depresión clínica, y los tratamientos disponibles.",
+      "category": "Depresión",
+      "author": "Dr. Rafael Mendes"
+    },
+    "3": {
+      "title": "Desarrollo Infantil y Emociones",
+      "excerpt": "Cómo los niños desarrollan emociones y la importancia de crear un ambiente seguro para su crecimiento emocional.",
+      "category": "Psicología Infantil",
+      "author": "Dra. Juliana Costa"
+    },
+    "4": {
+      "title": "Relaciones Saludables: La Comunicación lo es Todo",
+      "excerpt": "Consejos prácticos para mejorar la comunicación en la relación y fortalecer vínculos afectivos.",
+      "category": "Relaciones",
+      "author": "Dr. Marcos Almeida"
+    },
+    "5": {
+      "title": "Memoria y Cognición: Entienda su Cerebro",
+      "excerpt": "Explore cómo funciona la memoria y técnicas para mantener la cognición activa y saludable.",
+      "category": "Neuropsicología",
+      "author": "Dra. Fernanda Lima"
+    },
+    "6": {
+      "title": "Agotamiento: Reconozca los Signos y Sepa Cómo Prevenirlo",
+      "excerpt": "El agotamiento profesional afecta a millones de personas. Aprenda a identificar síntomas y estrategias de prevención.",
+      "category": "Trabajo y Salud Mental",
+      "author": "Dra. Ana Carolina Ribeiro"
+    }
   }
 }

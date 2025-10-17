@@ -16,6 +16,12 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service }: ServiceCardProps) {
   const t = useTranslations("services");
+  const tGlobal = useTranslations();
+
+  // Traduzir título e descrição
+  const serviceTitle = tGlobal(`services_data.${service.id}.title`);
+  const serviceDesc = tGlobal(`services_data.${service.id}.description`);
+
   const Icon = ({ name }: { name: string }) => {
     const iconClass = "w-12 h-12 text-primary";
     switch (name) {
@@ -56,12 +62,12 @@ export function ServiceCard({ service }: ServiceCardProps) {
           </div>
         </div>
         <CardTitle className="group-hover:text-primary text-2xl transition-colors">
-          {service.title}
+          {serviceTitle}
         </CardTitle>
       </CardHeader>
       <CardContent className="flex flex-grow flex-col">
         <CardDescription className="mb-6 flex-grow text-base leading-relaxed">
-          {service.desc}
+          {serviceDesc}
         </CardDescription>
         <Button
           variant="outline"

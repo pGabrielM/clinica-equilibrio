@@ -8,9 +8,11 @@ import { BookingForm } from "@/components/resources/landing/booking-form";
 import { ContactForm } from "@/components/resources/landing/contact-form";
 import { ContactDetails } from "@/components/resources/landing/contact-details";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import anime from "@/lib/anime";
 
 export default function Home() {
+  const t = useTranslations("contact");
   const contactTitleRef = useRef<HTMLHeadingElement>(null);
   const contactDescRef = useRef<HTMLParagraphElement>(null);
   const contactGridRef = useRef<HTMLDivElement>(null);
@@ -87,13 +89,13 @@ export default function Home() {
               ref={contactTitleRef}
               className="text-foreground mb-4 text-3xl font-bold opacity-0 md:text-4xl"
             >
-              Entre em contato
+              {t("title")}
             </h2>
             <p
               ref={contactDescRef}
               className="text-muted-foreground mx-auto max-w-2xl text-xl opacity-0"
             >
-              Estamos aqui para ajudar. Entre em contato conosco para dúvidas ou agendamentos.
+              {t("subtitle")}
             </p>
           </div>
           <div ref={contactGridRef} className="grid grid-cols-1 gap-12 lg:grid-cols-2">

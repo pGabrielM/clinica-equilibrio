@@ -126,3 +126,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Liquid Glass Effect - iOS 26 Style */
+  .glass-nav-item {
+    @apply relative rounded-lg px-4 py-2 font-medium transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-nav-item-active {
+    @apply relative rounded-lg px-4 py-2 font-semibold transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .glass-nav-item-active:hover {
+    background-color: rgba(255, 255, 255, 0.42);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+}

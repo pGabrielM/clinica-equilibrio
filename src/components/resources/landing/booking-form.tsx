@@ -166,10 +166,8 @@ export function BookingForm() {
                   />
                 </svg>
               </div>
-              <h3 className="text-foreground mb-3 text-3xl font-bold">Agendamento Recebido!</h3>
-              <p className="text-muted-foreground mb-6 text-lg">
-                Entraremos em contato em breve para confirmar sua sessão.
-              </p>
+              <h3 className="text-foreground mb-3 text-3xl font-bold">{t("success.received")}</h3>
+              <p className="text-muted-foreground mb-6 text-lg">{t("success.contactSoon")}</p>
               <div className="text-muted-foreground flex items-center justify-center gap-2 text-sm">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -179,7 +177,7 @@ export function BookingForm() {
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>Tempo de resposta: até 24h</span>
+                <span>{t("success.responseTime")}</span>
               </div>
             </CardContent>
           </Card>
@@ -333,12 +331,13 @@ export function BookingForm() {
                   value={formData.service}
                   onChange={handleChange}
                   onBlur={() => handleBlur("service")}
-                  className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${touched.service && errors.service
+                  className={`bg-background text-foreground w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${
+                    touched.service && errors.service
                       ? "border-red-500 focus:ring-red-500"
                       : "border-border focus:ring-primary"
-                    }`}
+                  }`}
                 >
-                  <option value="">Selecione um serviço</option>
+                  <option value="">{t("form.service")}</option>
                   {services.map((service) => (
                     <option key={service.id} value={service.title}>
                       {service.title}
@@ -438,12 +437,13 @@ export function BookingForm() {
                     value={formData.time}
                     onChange={handleChange}
                     onBlur={() => handleBlur("time")}
-                    className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${touched.time && errors.time
+                    className={`w-full rounded-md border px-3 py-2 transition-all focus:ring-2 focus:outline-none ${
+                      touched.time && errors.time
                         ? "border-red-500 focus:ring-red-500"
                         : "border-border focus:ring-primary"
-                      }`}
+                    }`}
                   >
-                    <option value="">Selecione um horário</option>
+                    <option value="">{t("validations.timeRequired")}</option>
                     <option value="08:00">08:00</option>
                     <option value="09:00">09:00</option>
                     <option value="10:00">10:00</option>
@@ -479,7 +479,7 @@ export function BookingForm() {
                 type="submit"
                 className="group w-full py-6 text-lg shadow-lg transition-all hover:scale-105 hover:shadow-xl"
               >
-                <span>Confirmar Agendamento</span>
+                <span>{t("form.submit")}</span>
                 <svg
                   className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
                   fill="none"

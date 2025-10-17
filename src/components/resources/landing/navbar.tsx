@@ -85,76 +85,61 @@ export function Navbar() {
               Clínica Equilíbrio
             </Link>
           </div>
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden items-center space-x-3 md:flex">
             <Link
               href="#services"
               onClick={(e) => handleNavClick(e, "#services")}
-              className={`nav-link text-muted-foreground hover:text-primary group relative transition-colors ${
-                activeSection === "services" ? "text-primary font-semibold" : ""
+              className={`nav-link transition-all duration-300 ${
+                activeSection === "services"
+                  ? "glass-nav-item-active text-primary"
+                  : "glass-nav-item hover:text-primary text-slate-700"
               }`}
             >
               {t("services")}
-              <span
-                className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
-                  activeSection === "services" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
             <Link
               href="#team"
               onClick={(e) => handleNavClick(e, "#team")}
-              className={`nav-link text-muted-foreground hover:text-primary group relative transition-colors ${
-                activeSection === "team" ? "text-primary font-semibold" : ""
+              className={`nav-link transition-all duration-300 ${
+                activeSection === "team"
+                  ? "glass-nav-item-active text-primary"
+                  : "glass-nav-item hover:text-primary text-slate-700"
               }`}
             >
               {t("team")}
-              <span
-                className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
-                  activeSection === "team" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
             <Link
               href="#blog"
               onClick={(e) => handleNavClick(e, "#blog")}
-              className={`nav-link text-muted-foreground hover:text-primary group relative transition-colors ${
-                activeSection === "blog" ? "text-primary font-semibold" : ""
+              className={`nav-link transition-all duration-300 ${
+                activeSection === "blog"
+                  ? "glass-nav-item-active text-primary"
+                  : "glass-nav-item hover:text-primary text-slate-700"
               }`}
             >
               {t("blog")}
-              <span
-                className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
-                  activeSection === "blog" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
             <Link
               href="#booking"
               onClick={(e) => handleNavClick(e, "#booking")}
-              className={`nav-link text-muted-foreground hover:text-primary group relative transition-colors ${
-                activeSection === "booking" ? "text-primary font-semibold" : ""
+              className={`nav-link transition-all duration-300 ${
+                activeSection === "booking"
+                  ? "glass-nav-item-active text-primary"
+                  : "glass-nav-item hover:text-primary text-slate-700"
               }`}
             >
               {t("booking")}
-              <span
-                className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
-                  activeSection === "booking" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
             <Link
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className={`nav-link text-muted-foreground hover:text-primary group relative transition-colors ${
-                activeSection === "contact" ? "text-primary font-semibold" : ""
+              className={`nav-link transition-all duration-300 ${
+                activeSection === "contact"
+                  ? "glass-nav-item-active text-primary"
+                  : "glass-nav-item hover:text-primary text-slate-700"
               }`}
             >
               {t("contact")}
-              <span
-                className={`bg-primary absolute -bottom-1 left-0 h-0.5 w-full origin-left transform transition-transform ${
-                  activeSection === "contact" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
             </Link>
             <Link href="#booking" onClick={(e) => handleNavClick(e, "#booking")}>
               <Button className="nav-link">{t("schedule")}</Button>

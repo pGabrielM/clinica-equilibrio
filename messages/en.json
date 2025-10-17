@@ -21,7 +21,9 @@
     "features": {
       "activePsychologists": "Active CRP Psychologists",
       "flexibleSchedules": "Flexible Schedules",
-      "safeEnvironment": "Safe Environment"
+      "safeEnvironment": "Safe Environment",
+      "firstAppointment": "First Appointment",
+      "freeEvaluation": "Free Evaluation"
     }
   },
   "services": {
@@ -37,9 +39,14 @@
     "title": "Our Team",
     "subtitle": "Professionals specialized in mental health"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Articles on mental health, emotional well-being and psychological tips for a balanced life.",
+    "readMore": "Read more"
+  },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "We are here to take care of your mental health",
+    "subtitle": "We're here to help. Contact us for any questions or appointments.",
     "info": {
       "title": "Contact Information",
       "address": "Address",
@@ -136,7 +143,10 @@
     "success": {
       "title": "Booking Confirmed!",
       "message": "Your appointment has been scheduled. We will contact you by phone or WhatsApp to confirm.",
-      "confirmation": "Check your email for details"
+      "confirmation": "Check your email for details",
+      "received": "Booking Received!",
+      "contactSoon": "We will get in touch soon to confirm your appointment.",
+      "responseTime": "Response time: up to 24h"
     }
   },
   "footer": {
@@ -176,5 +186,127 @@
     "cookies": "Cookie Policy",
     "copyright": "© 2025 Clínica Equilíbrio. All rights reserved.",
     "legalInfo": "CRP: 06/12345 | CNPJ: 12.345.678/0001-90 | Technical Manager: Dr. Ana Carolina Silva"
+  },
+  "services_data": {
+    "1": {
+      "title": "Individual Psychotherapy",
+      "description": "Individualized psychological care for anxiety, depression, self-esteem and personal development."
+    },
+    "2": {
+      "title": "Couples Therapy",
+      "description": "Therapeutic support for couples seeking to improve communication and strengthen relationships."
+    },
+    "3": {
+      "title": "Psychiatry",
+      "description": "Evaluation, diagnosis and medical treatment of mental disorders by specialized doctors."
+    },
+    "4": {
+      "title": "Child Therapy",
+      "description": "Specialized care for children and adolescents with emotional and behavioral difficulties."
+    },
+    "5": {
+      "title": "Group Therapy",
+      "description": "Therapeutic group sessions to share experiences and develop social skills."
+    },
+    "6": {
+      "title": "Career Guidance",
+      "description": "Psychological support for career choice and professional transitions with self-awareness."
+    },
+    "7": {
+      "title": "Psychological Assessment",
+      "description": "Comprehensive evaluation with psychological tests for diagnosis and proper therapeutic guidance."
+    },
+    "8": {
+      "title": "Family Therapy",
+      "description": "Systemic support for families seeking to improve dynamics and resolve conflicts."
+    },
+    "9": {
+      "title": "Neuropsychology",
+      "description": "Assessment and rehabilitation of cognitive functions such as memory, attention and language."
+    },
+    "10": {
+      "title": "Online Psychotherapy",
+      "description": "Psychological care at a distance with the same quality and confidentiality as in-person service."
+    }
+  },
+  "team_data": {
+    "1": {
+      "name": "Dr. Ana Carolina Ribeiro",
+      "specialty": "Clinical Psychologist - CRP 08/12345",
+      "bio": "Specialist in Cognitive Behavioral Therapy with 12 years of experience in treating adults and adolescents."
+    },
+    "2": {
+      "name": "Dr. Rafael Mendes",
+      "specialty": "Psychiatrist - CRM 12345",
+      "bio": "Psychiatrist focused on anxiety and depression disorders, evidence-based and humanized practice."
+    },
+    "3": {
+      "name": "Dr. Juliana Costa",
+      "specialty": "Child Psychologist - CRP 08/23456",
+      "bio": "Psychologist specialized in child and family care, trained in play therapy and child development."
+    },
+    "4": {
+      "name": "Dr. Marcos Almeida",
+      "specialty": "Psychologist and Couples Therapist - CRP 08/34567",
+      "bio": "Specialist in couples and family therapy with systemic approach and over 10 years of clinical experience."
+    },
+    "5": {
+      "name": "Dr. Fernanda Lima",
+      "specialty": "Neuropsychologist - CRP 08/45678",
+      "bio": "Neuropsychologist specialized in cognitive assessment and rehabilitation of higher brain functions."
+    },
+    "6": {
+      "name": "Dr. Carlos Eduardo Santos",
+      "specialty": "Organizational Psychologist - CRP 08/56789",
+      "bio": "Specialist in career guidance and development, certified professional coach."
+    },
+    "7": {
+      "name": "Dr. Beatriz Rodrigues",
+      "specialty": "Adolescent Psychologist - CRP 08/67890",
+      "bio": "Psychologist focused on adolescents, specialist in mood and anxiety disorders in adolescence."
+    },
+    "8": {
+      "name": "Dr. Paulo Henrique Dias",
+      "specialty": "Family Psychotherapist - CRP 08/78901",
+      "bio": "Systemic family therapist with specialization in family constellation and interpersonal dynamics."
+    }
+  },
+  "blog_data": {
+    "1": {
+      "title": "Anxiety: How to Identify and Seek Help",
+      "excerpt": "Understand the signs of anxiety and know when to seek a mental health professional.",
+      "category": "Anxiety",
+      "author": "Dr. Ana Carolina Ribeiro"
+    },
+    "2": {
+      "title": "Depression: Beyond Sadness",
+      "excerpt": "Understand the difference between normal sadness and clinical depression, and available treatments.",
+      "category": "Depression",
+      "author": "Dr. Rafael Mendes"
+    },
+    "3": {
+      "title": "Child Development and Emotions",
+      "excerpt": "How children develop emotions and the importance of creating a safe environment for emotional growth.",
+      "category": "Child Psychology",
+      "author": "Dr. Juliana Costa"
+    },
+    "4": {
+      "title": "Healthy Relationships: Communication is Everything",
+      "excerpt": "Practical tips to improve relationship communication and strengthen emotional bonds.",
+      "category": "Relationships",
+      "author": "Dr. Marcos Almeida"
+    },
+    "5": {
+      "title": "Memory and Cognition: Understanding Your Brain",
+      "excerpt": "Explore how memory works and techniques to keep cognition active and healthy.",
+      "category": "Neuropsychology",
+      "author": "Dr. Fernanda Lima"
+    },
+    "6": {
+      "title": "Burnout: Recognize the Signs and Know How to Prevent It",
+      "excerpt": "Professional exhaustion affects millions of people. Learn to identify symptoms and prevention strategies.",
+      "category": "Work and Mental Health",
+      "author": "Dr. Ana Carolina Ribeiro"
+    }
   }
 }

@@ -184,10 +184,11 @@ export function Services() {
                     animateCards();
                     animatePagination();
                   }}
-                  className={`h-3 w-3 rounded-full transition-all duration-300 ${currentPage === index
+                  className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                    currentPage === index
                       ? "bg-primary shadow-primary/50 w-8 shadow-lg"
                       : "bg-muted-foreground/30 hover:bg-muted-foreground/50 hover:scale-125"
-                    }`}
+                  }`}
                   aria-label={`Ir para página ${index + 1}`}
                 />
               ))}

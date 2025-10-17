@@ -2,12 +2,19 @@ import Image from "next/image";
 import { type ITeamMember } from "@/types/landings";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/commons/card";
 import { Badge } from "@/components/commons/badge";
+import { useTranslations } from "next-intl";
 
 interface TeamCardProps {
   member: ITeamMember;
 }
 
 export function TeamCard({ member }: TeamCardProps) {
+  const tGlobal = useTranslations();
+
+  // Traduzir dados do membro
+  const memberName = tGlobal(`team_data.${member.id}.name`);
+  const memberSpecialty = tGlobal(`team_data.${member.id}.specialty`);
+  const memberBio = tGlobal(`team_data.${member.id}.bio`);
   return (
     <Card className="group hover:border-primary/30 from-background to-muted/10 overflow-hidden border-2 bg-gradient-to-b text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
       <CardHeader className="relative">
@@ -33,17 +40,17 @@ export function TeamCard({ member }: TeamCardProps) {
         </div>
 
         <h3 className="text-foreground group-hover:text-primary mb-2 text-2xl font-bold transition-colors">
-          {member.name}
+          {memberName}
         </h3>
         <Badge
           variant="secondary"
           className="group-hover:bg-primary group-hover:text-primary-foreground mt-2 px-4 py-1 text-sm transition-colors"
         >
-          {member.specialty}
+          {memberSpecialty}
         </Badge>
       </CardHeader>
       <CardContent className="pt-4">
-        <CardDescription className="mb-6 text-base leading-relaxed">{member.bio}</CardDescription>
+        <CardDescription className="mb-6 text-base leading-relaxed">{memberBio}</CardDescription>
 
         {/* Action buttons */}
         <div className="flex justify-center gap-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

@@ -10,12 +10,21 @@ import {
 } from "@/components/commons/card";
 import { Button } from "@/components/commons/button";
 import { Calendar, User, Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface BlogCardProps {
   post: IBlogPost;
 }
 
 export function BlogCard({ post }: BlogCardProps) {
+  const tGlobal = useTranslations();
+
+  // Traduzir dados do post
+  const postTitle = tGlobal(`blog_data.${post.id}.title`);
+  const postExcerpt = tGlobal(`blog_data.${post.id}.excerpt`);
+  const postCategory = tGlobal(`blog_data.${post.id}.category`);
+  const postAuthor = tGlobal(`blog_data.${post.id}.author`);
+
   // Format date to Brazilian format
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -40,7 +49,7 @@ export function BlogCard({ post }: BlogCardProps) {
           {/* Category badge */}
           <div className="absolute top-4 left-4 z-20">
             <span className="bg-primary text-primary-foreground rounded-full px-3 py-1 text-xs font-semibold">
-              {post.category}
+              {postCategory}
             </span>
           </div>
           {/* Read time */}
@@ -61,24 +70,24 @@ export function BlogCard({ post }: BlogCardProps) {
         </div>
         <Link href={`/blog/${post.slug}`}>
           <CardTitle className="group-hover:text-primary line-clamp-2 cursor-pointer text-xl leading-tight transition-colors">
-            {post.title}
+            {postTitle}
           </CardTitle>
         </Link>
         <div className="text-muted-foreground flex items-center gap-2 text-sm">
           <User className="h-4 w-4" />
-          <span>{post.author}</span>
+          <span>{postAuthor}</span>
         </div>
       </CardHeader>
       <CardContent>
         <CardDescription className="mb-6 line-clamp-3 text-base leading-relaxed">
-          {post.excerpt}
+          {postExcerpt}
         </CardDescription>
         <Link href={`/blog/${post.slug}`}>
           <Button
             variant="outline"
             className="hover:bg-primary hover:text-primary-foreground hover:border-primary group/btn w-full transition-all"
           >
-            <span>Leia mais</span>
+            <span>{tGlobal("blog.readMore")}</span>
             <svg
               className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1"
               fill="none"
