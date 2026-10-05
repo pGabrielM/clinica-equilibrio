@@ -7,8 +7,10 @@ import {
   CardTitle,
 } from "@/components/commons/card";
 import { Button } from "@/components/commons/button";
-import { User, Heart, Baby, Users } from "lucide-react";
+import { User, Heart, Baby, Users, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+const iconMap: Record<string, LucideIcon> = { User, Heart, Baby, Users };
 
 interface ServiceCardProps {
   service: IService;
@@ -22,28 +24,14 @@ export function ServiceCard({ service }: ServiceCardProps) {
   const serviceTitle = tGlobal(`services_data.${service.id}.title`);
   const serviceDesc = tGlobal(`services_data.${service.id}.description`);
 
-  const Icon = ({ name }: { name: string }) => {
-    const iconClass = "w-12 h-12 text-primary";
-    switch (name) {
-      case "User":
-        return <User className={iconClass} />;
-      case "Heart":
-        return <Heart className={iconClass} />;
-      case "Baby":
-        return <Baby className={iconClass} />;
-      case "Users":
-        return <Users className={iconClass} />;
-      default:
-        return <User className={iconClass} />;
-    }
-  };
+  const Icon = iconMap[service.icon] ?? User;
 
   return (
     <Card className="group hover:border-primary/50 from-background to-muted/20 h-full border-2 bg-gradient-to-br transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <CardHeader>
         <div className="mb-4 flex items-start justify-between">
           <div className="bg-primary/10 group-hover:bg-primary/20 flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-110">
-            <Icon name={service.icon} />
+            <Icon className="text-primary h-12 w-12" />
           </div>
           <div className="bg-primary/5 flex h-8 w-8 items-center justify-center rounded-full opacity-0 transition-opacity group-hover:opacity-100">
             <svg
